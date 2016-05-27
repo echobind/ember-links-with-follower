@@ -1,7 +1,7 @@
 {
   "name": "ember-links-with-follower",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "An Ember component to render a set of links with a \"follower\" line underneath. The follower moves to the active link, matching size and position on the page.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Chris Ball/ember-links-with-follower.git"
+    "url": "git@github.com:echobind/ember-links-with-follower.git"
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -54,6 +54,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoURL": "http://Chris Ball.github.io/ember-links-with-follower"
+    "demoURL": "http://echobind.github.io/ember-links-with-follower"
   }
 }
