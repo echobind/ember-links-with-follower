@@ -1,26 +1,27 @@
-# Ember-links-with-follower
+# ember-links-with-follower
 
-This README outlines the details of collaborating on this Ember addon.
+[![Build Status](https://travis-ci.org/Chris Ball/ember-links-with-follower.svg)](https://travis-ci.org/Chris Ball/ember-links-with-follower)
+[![npm version](https://badge.fury.io/js/ember-links-with-follower.svg)](http://badge.fury.io/js/ember-links-with-follower)
+[![Code Climate](https://codeclimate.com/github/Chris Ball/ember-links-with-follower/badges/gpa.svg)](https://codeclimate.com/github/Chris Ball/ember-links-with-follower)
+[![Test Coverage](https://codeclimate.com/github/Chris Ball/ember-links-with-follower/badges/coverage.svg)](https://codeclimate.com/github/Chris Ball/ember-links-with-follower/coverage)
+[![Dependency Status](https://david-dm.org/Chris Ball/ember-links-with-follower.svg)](https://david-dm.org/Chris Ball/ember-links-with-follower)
+
+## Features
+
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+```
+ember install ember-links-with-follower
+```
 
-## Running
+## Helpful Links
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+- ### [Live Demo](http://Chris Ball/.github.io/ember-links-with-follower)
 
-## Running Tests
+- ### [Changelog](CHANGELOG.md)
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+## Looking for help?
+If it is a bug [please open an issue on GitHub](http://github.com/Chris Ball/ember-links-with-follower/issues).
 
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+## Usage
