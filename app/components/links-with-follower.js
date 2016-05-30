@@ -1,0 +1,1 @@
+export { default } from 'ember-links-with-follower/components/links-with-follower';
