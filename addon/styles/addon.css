@@ -1,0 +1,19 @@
+.link-follower-parent {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.link-follower-parent > * {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.link-follower {
+  border-bottom: 2px solid black;
+  position: absolute;
+  bottom: 0;
+  width: 150px;
+  padding: 0 !important;
+}

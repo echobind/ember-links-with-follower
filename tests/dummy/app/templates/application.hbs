@@ -1,3 +1,17 @@
-<h2 id="title">Welcome to Ember</h2>
+<h2>Links with Follower</h2>
+
+{{#links-with-follower class="my-nav"}}
+  {{#link-to 'index' tagName='li'}}
+    Home
+  {{/link-to}}
+
+  {{#link-to 'page1' tagName='li'}}
+    This is really a much longer link
+  {{/link-to}}
+
+  {{#link-to 'page2' tagName='li'}}
+    Page 2
+  {{/link-to}}
+{{/links-with-follower}}
 
 {{outlet}}
