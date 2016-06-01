@@ -17,7 +17,7 @@ ember install ember-links-with-follower
 
 ## Helpful Links
 
-- ### [Live Demo](http://echobind/.github.io/ember-links-with-follower)
+- ### [Live Demo](http://echobind.github.io/ember-links-with-follower)
 
 - ### [Changelog](CHANGELOG.md)
 
