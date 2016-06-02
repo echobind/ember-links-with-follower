@@ -1,11 +1,15 @@
 # Change Log
 
-## [Unreleased](https://github.com/echobind/ember-links-with-follower/tree/HEAD)
+## [v0.2.0](https://github.com/echobind/ember-links-with-follower/tree/v0.2.0) (2016-06-02)
+[Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.1.0...v0.2.0)
 
-[Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.1.0...HEAD)
+- Back button does not update follower [\#9](https://github.com/echobind/ember-links-with-follower/issues/9)
 
+- Use router.currentPath instead of click for moving follower [\#10](https://github.com/echobind/ember-links-with-follower/pull/10) ([cball](https://github.com/cball))
+- Add github\_changelog\_generator to release.js [\#8](https://github.com/echobind/ember-links-with-follower/pull/8) ([cball](https://github.com/cball))
 - fix broken link to live demo [\#7](https://github.com/echobind/ember-links-with-follower/pull/7) ([elbeezy](https://github.com/elbeezy))
 - Update ember-cli-eslint to version 1.4.1 🚀 [\#5](https://github.com/echobind/ember-links-with-follower/pull/5) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-ajax to version 2.4.1 🚀 [\#4](https://github.com/echobind/ember-links-with-follower/pull/4) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
 
 ## [v0.1.0](https://github.com/echobind/ember-links-with-follower/tree/v0.1.0) (2016-06-01)
 - Add links-with-follower component and basic demo. [\#6](https://github.com/echobind/ember-links-with-follower/pull/6) ([cball](https://github.com/cball))
