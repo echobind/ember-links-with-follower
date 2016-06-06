@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.2.1](https://github.com/echobind/ember-links-with-follower/tree/v0.2.1) (2016-06-06)
+[Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.2.0...v0.2.1)
+
+- Properly handle dynamic route segments [\#14](https://github.com/echobind/ember-links-with-follower/issues/14)
+
+- Updates activeSelector and uses willTransition to move follower [\#15](https://github.com/echobind/ember-links-with-follower/pull/15) ([cball](https://github.com/cball))
+
 ## [v0.2.0](https://github.com/echobind/ember-links-with-follower/tree/v0.2.0) (2016-06-02)
 [Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.1.0...v0.2.0)
 
