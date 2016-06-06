@@ -4,6 +4,7 @@ import { scheduleOnce } from 'ember-runloop';
 import { isEmpty } from 'ember-utils';
 import { assert } from 'ember-metal/utils';
 import { A as emberArray } from 'ember-array/utils';
+import { addListener, removeListener } from 'ember-metal/events';
 import jQuery from 'jquery';
 import getOwner from 'ember-getowner-polyfill';
 
@@ -38,7 +39,7 @@ export default Ember.Component.extend({
    * @type {String}
    * @default 'li.active'
    */
-  activeSelector: 'li.active',
+  activeSelector: 'li.active:not(li.ember-transitioning-out), li.ember-transitioning-in',
 
   /**
    * The duration used to animate the follower link.
@@ -61,7 +62,8 @@ export default Ember.Component.extend({
   init() {
     this._super(...arguments);
     this.router = getOwner(this).lookup('router:main');
-    Ember.addObserver(this.router, 'currentPath', this, this._queueMoveFollower);
+
+    addListener(this.router, 'willTransition', this, this._queueMoveFollower);
   },
 
   didInsertElement() {
@@ -73,7 +75,8 @@ export default Ember.Component.extend({
 
   willDestroy() {
     this._super(...arguments);
-    Ember.removeObserver(this.router, 'currentPath', this, this._moveFollower);
+
+    removeListener(this.router, 'willTransition', this, this._queueMoveFollower);
     this.router = null;
   },
 
