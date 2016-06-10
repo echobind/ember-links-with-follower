@@ -4,13 +4,23 @@
  *
  * This pattern is commonly used for navigation:
  *
- * ![twitter](https://raw.githubusercontent.com/echobind/ember-links-with-follower/master/public/images/twitter.png)
- * (from Twitter app)
+ * ![twitter](https://raw.githubusercontent.com/echobind/ember-links-with-follower/master/public/assets/images/twitter.png)
  *
- * ![linkedin](https://raw.githubusercontent.com/echobind/ember-links-with-follower/master/public/images/linkedin.png)
+ * (from Twitter app)
+ * <p>&nbsp;</p>
+ *
+ * ![linkedin](https://raw.githubusercontent.com/echobind/ember-links-with-follower/master/public/assets/images/linkedin.png)
+ *
  * (from LinkedIn app)
  *
- * ([yuidoc-ember-theme](https://github.com/offirgolan/yuidoc-ember-theme) by Offir Golan)
+ * ---
+ *
+ * Checkout the [LinksWithFollower](../classes/LinksWithFollower.html) component!
+ *
+ * <div style="position:absolute; bottom: 20px; right: 20px;">
+ * (<a href="https://github.com/offirgolan/yuidoc-ember-theme">yuidoc-ember-theme</a> by Offir Golan)
+ * </div>
+ *
  * @module Home
  */
 
