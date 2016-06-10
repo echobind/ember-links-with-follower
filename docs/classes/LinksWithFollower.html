@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>LinksWithFollower - ember-links-with-follower</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="row">
+        <div class="sidebar-container">
+            <div id="sidebar">
+              <div class="header">
+                <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+                  <a href="../">ember-links-with-follower</a>
+                </h1>
+                <form class="navbar-form">
+                    <input type="search" class="search-query" placeholder="Search classes/modules...">
+                </form>
+              </div>
+              <ul class="main-nav">
+                <li class="section">Modules</li>
+                   <li  >
+                     <a href="../modules/Components.html">Components</a>
+                   </li>
+                   <li  >
+                     <a href="../modules/Home.html">Home</a>
+                   </li>
+            
+                <li class="section">Classes</li>
+                    <li ><a  href="../classes/HtmlTag.html">HtmlTag</a></li>
+                    <li  class="active"><a  href="../classes/LinksWithFollower.html">LinksWithFollower</a></li>
+              </ul>
+            
+              <div class="footer">
+                <a href="https://github.com/echobind/links-with-follower" class="github">GitHub</a>
+                <p class="version pull-right">v0.2.2</p>
+              </div>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <form id="options-form" class="form-inline pull-right">
+                            Show:
+                            <label for="api-show-inherited" class="checkbox">
+                                <input type="checkbox" id="api-show-inherited" checked>
+                                Inherited
+                            </label>
+                    
+                            <label for="api-show-protected" class="checkbox">
+                                <input type="checkbox" id="api-show-protected">
+                                Protected
+                            </label>
+                    
+                            <label for="api-show-private" class="checkbox">
+                                <input type="checkbox" id="api-show-private">
+                                Private
+                            </label>
+                            <label for="api-show-deprecated" class="checkbox">
+                                <input type="checkbox" id="api-show-deprecated">
+                                Deprecated
+                            </label>
+                    
+                        </form>
+                    
+<div class="page-header">
+    <h1>LinksWithFollower</h1>
+</div>
+<div class="well well-small">
+
+
+            Module: <a href="../modules/Components.html">Components</a>
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/addon_components_links-with-follower.js.html#l11"><code>addon&#x2F;components&#x2F;links-with-follower.js:11</code></a>
+        </div>
+</div>
+
+
+
+  <div class="yuidoc-class-description">
+  <p>A component that renders a follower line underneath provided "links".
+Expects a block to be passed that contains a set of links to render.</p>
+<pre class="code prettyprint"><code class="language-hbs">{{#links-with-follower class="my-nav"}}
+  {{#link-to 'route1' tagName='li'}}Route 1{{/link-to}}
+  {{#link-to 'route2' tagName='li'}}Route 2{{/link-to}}
+{{/links-with-follower}}
+</code></pre>
+
+  </div>
+
+<div>
+    <div class="page-section">
+        <div id="index">
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                            <li class="index-item property">
+                                <a href="#property_activeSelector">activeSelector</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_containerTagName">containerTagName</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_followerAnimationDuration">followerAnimationDuration</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_followerPosition">followerPosition</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_linkTagName">linkTagName</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+        </div>
+
+
+            <div id="properties" class="page-section">
+                <h2 class="off-left">Properties</h2>
+                <div class="item-list">
+<div id="property_activeSelector" class="property item">
+    <h3 class="name"><code>activeSelector</code></h3>
+    <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/addon_components_links-with-follower.js.html#l49"><code>addon&#x2F;components&#x2F;links-with-follower.js:49</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The selector used to consider a link active.</p>
+
+    </div>
+
+        <p><br><strong>Default:</strong> &#x27;li.active&#x27;</p>
+
+
+</div>
+<div id="property_containerTagName" class="property item">
+    <h3 class="name"><code>containerTagName</code></h3>
+    <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/addon_components_links-with-follower.js.html#l30"><code>addon&#x2F;components&#x2F;links-with-follower.js:30</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Tag name to use for the element wrapping the provided links.</p>
+
+    </div>
+
+        <p><br><strong>Default:</strong> &#x27;ul&#x27;</p>
+
+
+</div>
+<div id="property_followerAnimationDuration" class="property item">
+    <h3 class="name"><code>followerAnimationDuration</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/addon_components_links-with-follower.js.html#l58"><code>addon&#x2F;components&#x2F;links-with-follower.js:58</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>The duration used to animate the follower link.</p>
+
+    </div>
+
+        <p><br><strong>Default:</strong> 150</p>
+
+
+</div>
+<div id="property_followerPosition" class="property item">
+    <h3 class="name"><code>followerPosition</code></h3>
+    <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/addon_components_links-with-follower.js.html#l67"><code>addon&#x2F;components&#x2F;links-with-follower.js:67</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Where to position the follower. Not yet used.</p>
+
+    </div>
+
+        <p><br><strong>Default:</strong> &#x27;bottom&#x27;</p>
+
+
+</div>
+<div id="property_linkTagName" class="property item">
+    <h3 class="name"><code>linkTagName</code></h3>
+    <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/addon_components_links-with-follower.js.html#l39"><code>addon&#x2F;components&#x2F;links-with-follower.js:39</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        <p>Tag name to use for the follower. It is expected to match items passed
+in via the block.</p>
+
+    </div>
+
+        <p><br><strong>Default:</strong> &#x27;li&#x27;</p>
+
+
+</div>
+                </div>
+            </div>
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/vendor/prettify/prettify-min.js"></script>
+    <script>prettyPrint();</script>
+    <script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="../assets/js/yuidoc-bootstrap.js"></script>
+</body>
+</html>

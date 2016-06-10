@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>addon/components/links-with-follower.js - ember-links-with-follower</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="row">
+        <div class="sidebar-container">
+            <div id="sidebar">
+              <div class="header">
+                <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+                  <a href="../">ember-links-with-follower</a>
+                </h1>
+                <form class="navbar-form">
+                    <input type="search" class="search-query" placeholder="Search classes/modules...">
+                </form>
+              </div>
+              <ul class="main-nav">
+                <li class="section">Modules</li>
+                   <li  >
+                     <a href="../modules/Components.html">Components</a>
+                   </li>
+                   <li  >
+                     <a href="../modules/Home.html">Home</a>
+                   </li>
+            
+                <li class="section">Classes</li>
+                    <li ><a  href="../classes/HtmlTag.html">HtmlTag</a></li>
+                    <li ><a  href="../classes/LinksWithFollower.html">LinksWithFollower</a></li>
+              </ul>
+            
+              <div class="footer">
+                <a href="https://github.com/echobind/links-with-follower" class="github">GitHub</a>
+                <p class="version pull-right">v0.2.2</p>
+              </div>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <form id="options-form" class="form-inline pull-right">
+                            Show:
+                            <label for="api-show-inherited" class="checkbox">
+                                <input type="checkbox" id="api-show-inherited" checked>
+                                Inherited
+                            </label>
+                    
+                            <label for="api-show-protected" class="checkbox">
+                                <input type="checkbox" id="api-show-protected">
+                                Protected
+                            </label>
+                    
+                            <label for="api-show-private" class="checkbox">
+                                <input type="checkbox" id="api-show-private">
+                                Private
+                            </label>
+                            <label for="api-show-deprecated" class="checkbox">
+                                <input type="checkbox" id="api-show-deprecated">
+                                Deprecated
+                            </label>
+                    
+                        </form>
+                    
+<div class="page-header">
+    <h1>addon/components/links-with-follower.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+import Ember from &#x27;ember&#x27;;
+import layout from &#x27;../templates/components/links-with-follower&#x27;;
+import { scheduleOnce } from &#x27;ember-runloop&#x27;;
+import { isEmpty } from &#x27;ember-utils&#x27;;
+import { assert } from &#x27;ember-metal/utils&#x27;;
+import { A as emberArray } from &#x27;ember-array/utils&#x27;;
+import { addListener, removeListener } from &#x27;ember-metal/events&#x27;;
+import jQuery from &#x27;jquery&#x27;;
+import getOwner from &#x27;ember-getowner-polyfill&#x27;;
+
+/**
+ * A component that renders a follower line underneath provided &quot;links&quot;.
+ * Expects a block to be passed that contains a set of links to render.
+ *
+ * &#x60;&#x60;&#x60;hbs
+ * \{{#links-with-follower class=&quot;my-nav&quot;}}
+ *   {{#link-to &#x27;route1&#x27; tagName=&#x27;li&#x27;}}Route 1{{/link-to}}
+ *   {{#link-to &#x27;route2&#x27; tagName=&#x27;li&#x27;}}Route 2{{/link-to}}
+ * {{/links-with-follower}}
+ * &#x60;&#x60;&#x60;
+ *
+ * @class LinksWithFollower
+ * @module Components
+ */
+export default Ember.Component.extend({
+  layout,
+  tagName: &#x27;nav&#x27;,
+  classNames: [&#x27;links-with-follower&#x27;],
+
+  /**
+   * Tag name to use for the element wrapping the provided links.
+   *
+   * @property containerTagName
+   * @type {String}
+   * @default &#x27;ul&#x27;
+   */
+  containerTagName: &#x27;ul&#x27;,
+
+  /**
+   * Tag name to use for the follower. It is expected to match items passed
+   * in via the block.
+   *
+   * @property linkTagName
+   * @type {String}
+   * @default &#x27;li&#x27;
+   */
+  linkTagName: &#x27;li&#x27;,
+
+  /**
+   * The selector used to consider a link active.
+   *
+   * @property activeSelector
+   * @type {String}
+   * @default &#x27;li.active&#x27;
+   */
+  activeSelector: &#x27;li.active:not(li.ember-transitioning-out), li.ember-transitioning-in&#x27;,
+
+  /**
+   * The duration used to animate the follower link.
+   *
+   * @property followerAnimationDuration
+   * @type {Number}
+   * @default 150
+   */
+  followerAnimationDuration: 150,
+
+  /**
+   * Where to position the follower. Not yet used.
+   *
+   * @property followerPosition
+   * @type {String}
+   * @default &#x27;bottom&#x27;
+   */
+  followerPosition: &#x27;bottom&#x27;, // TODO: support top, bottom, both
+
+  init() {
+    this._super(...arguments);
+    this.router = getOwner(this).lookup(&#x27;router:main&#x27;);
+
+    addListener(this.router, &#x27;willTransition&#x27;, this, this._queueMoveFollower);
+  },
+
+  didInsertElement() {
+    this._super(...arguments);
+
+    this._assertChildrenMatchSelector();
+    this._moveFollower(false);
+  },
+
+  willDestroy() {
+    this._super(...arguments);
+
+    removeListener(this.router, &#x27;willTransition&#x27;, this, this._queueMoveFollower);
+    this.router = null;
+  },
+
+  /**
+   * Asserts that children passed in via block match the provided childSelector
+   * property.
+   *
+   * @private
+   */
+  _assertChildrenMatchSelector() {
+    let containerTagName = this.get(&#x27;containerTagName&#x27;);
+    let linkTagName = this.get(&#x27;linkTagName&#x27;);
+    let children = emberArray(this.$(&#x60;${containerTagName}&#x60;).children().toArray());
+    let childrenMatch = children.every((c) =&gt; jQuery(c).is(linkTagName));
+
+    assert(&#x60;children in block must match the &#x27;linkTagName&#x27; property&#x60;, childrenMatch);
+  },
+
+  /**
+   * Queues moving of a follower.
+   * @private
+   */
+  _queueMoveFollower() {
+    scheduleOnce(&#x27;afterRender&#x27;, this, this._moveFollower);
+  },
+
+  /**
+   * Moves and resizes the link follower to match the currently active link.
+   *
+   * @param  {Boolean} animate=true If the follower should animate
+   * @private
+   */
+  _moveFollower(animate=true) {
+    let width = this._widthOfActiveLink();
+    let left = this._leftPositionOfActiveLink();
+    let shouldHideFollower = isEmpty(width) || isEmpty(left);
+
+    this._hideFollower(shouldHideFollower);
+    this._animateFollower(animate, { width, left });
+  },
+
+  /**
+   * Shows or hides the follower link.
+   *
+   * @param  {Boolean} shouldHideFollower=true If the follower should animate
+   * @private
+   */
+  _hideFollower(shouldHideFollower=true) {
+    let follower = this.$(&#x27;.link-follower&#x27;);
+
+    if (shouldHideFollower) {
+      follower.hide();
+
+      Ember.warn(&#x27;No active link found. Hiding follower&#x27;, false, {
+        id: &#x27;ember-debug.links-with-follower-no-active&#x27;
+      });
+    } else {
+      follower.show();
+    }
+  },
+
+  /**
+   * Animates a follower to its final width / position.
+   *
+   * @param  {Boolean} animate=true If the follower should animate or not
+   * @param  {Object} options={}    Animate options passed to velocity or jQuery
+   * @private
+   */
+  _animateFollower(animate=true, options={}) {
+    let follower = this.$(&#x27;.link-follower&#x27;);
+
+    if (animate) {
+      if (follower.velocity) {
+        follower.velocity(options, this.get(&#x27;followerAnimationDuration&#x27;));
+      } else {
+        follower.animate(options, this.get(&#x27;followerAnimationDuration&#x27;));
+      }
+    } else {
+      follower.css(options);
+    }
+  },
+
+  /**
+   * Gets the width of the active link.
+   *
+   * @return {Number} The width including margins/padding
+   * @private
+   */
+  _widthOfActiveLink() {
+    let activeLink = this._activeLink();
+
+    return activeLink.outerWidth(true);
+  },
+
+  /**
+   * Gets the left position of the active link.
+   *
+   * @return {Number} The left position or 0 if it cannot be determined
+   * @private
+   */
+  _leftPositionOfActiveLink() {
+    let activeLink = this._activeLink();
+    let offset = activeLink.position() || { left: 0 };
+
+    return offset.left;
+  },
+
+  /**
+   * Gets the active link based on &#x60;activeSelector&#x60;.
+   *
+   * @return {Object} The results of the jQuery selector
+   * @private
+   */
+  _activeLink() {
+    let activeSelector = this.get(&#x27;activeSelector&#x27;);
+    return this.$(activeSelector);
+  }
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/vendor/prettify/prettify-min.js"></script>
+    <script>prettyPrint();</script>
+    <script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="../assets/js/yuidoc-bootstrap.js"></script>
+</body>
+</html>

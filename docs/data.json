@@ -1,0 +1,298 @@
+{
+    "project": {
+        "name": "ember-links-with-follower",
+        "description": "An Ember component to render a set of links with a \"follower\" line underneath. The follower moves to the active link, matching size and position on the page.",
+        "url": "https://github.com/echobind/links-with-follower",
+        "version": "v0.2.2"
+    },
+    "files": {
+        "addon/components/html-tag.js": {
+            "name": "addon/components/html-tag.js",
+            "modules": {},
+            "classes": {
+                "HtmlTag": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "addon/components/links-with-follower.js": {
+            "name": "addon/components/links-with-follower.js",
+            "modules": {},
+            "classes": {
+                "LinksWithFollower": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "addon/index.js": {
+            "name": "addon/index.js",
+            "modules": {
+                "Components": 1,
+                "Home": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "Components": {
+            "name": "Components",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "HtmlTag": 1,
+                "LinksWithFollower": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "addon/components/links-with-follower.js",
+            "line": 11,
+            "itemtype": "main"
+        },
+        "Home": {
+            "name": "Home",
+            "submodules": {},
+            "elements": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "addon/index.js",
+            "line": 1,
+            "description": "## Features\nProvides a component that renders a set of links with a follower line underneath. The follower will animate to the position of the active link, and grow or shrink in size if needed. If no active links are found, the follower will hide.\n\nThis pattern is commonly used for navigation:\n\n![twitter](https://raw.githubusercontent.com/echobind/ember-links-with-follower/master/public/assets/images/twitter.png)\n\n(from Twitter app)\n<p>&nbsp;</p>\n\n![linkedin](https://raw.githubusercontent.com/echobind/ember-links-with-follower/master/public/assets/images/linkedin.png)\n\n(from LinkedIn app)\n\n---\n\nCheckout the [LinksWithFollower](../classes/LinksWithFollower.html) component!\n\n<div style=\"position:absolute; bottom: 20px; right: 20px;\">\n(<a href=\"https://github.com/offirgolan/yuidoc-ember-theme\">yuidoc-ember-theme</a> by Offir Golan)\n</div>"
+        }
+    },
+    "classes": {
+        "HtmlTag": {
+            "name": "HtmlTag",
+            "shortname": "HtmlTag",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Components",
+            "file": "addon/components/html-tag.js",
+            "line": 3,
+            "description": "A component used to dynamically render html tags.\n\n```hbs\n\\{{html-tag tagName=\"ul\"}}\n```"
+        },
+        "LinksWithFollower": {
+            "name": "LinksWithFollower",
+            "shortname": "LinksWithFollower",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Components",
+            "namespace": "",
+            "file": "addon/components/links-with-follower.js",
+            "line": 11,
+            "description": "A component that renders a follower line underneath provided \"links\".\nExpects a block to be passed that contains a set of links to render.\n\n```hbs\n\\{{#links-with-follower class=\"my-nav\"}}\n  {{#link-to 'route1' tagName='li'}}Route 1{{/link-to}}\n  {{#link-to 'route2' tagName='li'}}Route 2{{/link-to}}\n{{/links-with-follower}}\n```"
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 30,
+            "description": "Tag name to use for the element wrapping the provided links.",
+            "itemtype": "property",
+            "name": "containerTagName",
+            "type": "{String}",
+            "default": "'ul'",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 39,
+            "description": "Tag name to use for the follower. It is expected to match items passed\nin via the block.",
+            "itemtype": "property",
+            "name": "linkTagName",
+            "type": "{String}",
+            "default": "'li'",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 49,
+            "description": "The selector used to consider a link active.",
+            "itemtype": "property",
+            "name": "activeSelector",
+            "type": "{String}",
+            "default": "'li.active'",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 58,
+            "description": "The duration used to animate the follower link.",
+            "itemtype": "property",
+            "name": "followerAnimationDuration",
+            "type": "{Number}",
+            "default": "150",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 67,
+            "description": "Where to position the follower. Not yet used.",
+            "itemtype": "property",
+            "name": "followerPosition",
+            "type": "{String}",
+            "default": "'bottom'",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 97,
+            "description": "Asserts that children passed in via block match the provided childSelector\nproperty.",
+            "access": "private",
+            "tagname": "",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 112,
+            "description": "Queues moving of a follower.",
+            "access": "private",
+            "tagname": "",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 120,
+            "description": "Moves and resizes the link follower to match the currently active link.",
+            "params": [
+                {
+                    "name": "animate=true",
+                    "description": "If the follower should animate",
+                    "type": "Boolean"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 135,
+            "description": "Shows or hides the follower link.",
+            "params": [
+                {
+                    "name": "shouldHideFollower=true",
+                    "description": "If the follower should animate",
+                    "type": "Boolean"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 155,
+            "description": "Animates a follower to its final width / position.",
+            "params": [
+                {
+                    "name": "animate=true",
+                    "description": "If the follower should animate or not",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "options={}",
+                    "description": "Animate options passed to velocity or jQuery",
+                    "type": "Object"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 176,
+            "description": "Gets the width of the active link.",
+            "return": {
+                "description": "The width including margins/padding",
+                "type": "Number"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 188,
+            "description": "Gets the left position of the active link.",
+            "return": {
+                "description": "The left position or 0 if it cannot be determined",
+                "type": "Number"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 201,
+            "description": "Gets the active link based on `activeSelector`.",
+            "return": {
+                "description": "The results of the jQuery selector",
+                "type": "Object"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nAsserts that children passed in via block match the provided childSelector\nproperty.",
+            "line": " addon/components/links-with-follower.js:97"
+        },
+        {
+            "message": "Missing item type\nQueues moving of a follower.",
+            "line": " addon/components/links-with-follower.js:112"
+        },
+        {
+            "message": "Missing item type\nMoves and resizes the link follower to match the currently active link.",
+            "line": " addon/components/links-with-follower.js:120"
+        },
+        {
+            "message": "Missing item type\nShows or hides the follower link.",
+            "line": " addon/components/links-with-follower.js:135"
+        },
+        {
+            "message": "Missing item type\nAnimates a follower to its final width / position.",
+            "line": " addon/components/links-with-follower.js:155"
+        },
+        {
+            "message": "Missing item type\nGets the width of the active link.",
+            "line": " addon/components/links-with-follower.js:176"
+        },
+        {
+            "message": "Missing item type\nGets the left position of the active link.",
+            "line": " addon/components/links-with-follower.js:188"
+        },
+        {
+            "message": "Missing item type\nGets the active link based on `activeSelector`.",
+            "line": " addon/components/links-with-follower.js:201"
+        }
+    ]
+}
