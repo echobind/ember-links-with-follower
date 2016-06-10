@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.2.2](https://github.com/echobind/ember-links-with-follower/tree/v0.2.2) (2016-06-10)
+[Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.2.1...v0.2.2)
+
+- Additional README/docs updates. Build docs in production & dev. [\#21](https://github.com/echobind/ember-links-with-follower/pull/21) ([cball](https://github.com/cball))
+- Add API docs, update README [\#20](https://github.com/echobind/ember-links-with-follower/pull/20) ([cball](https://github.com/cball))
+- Update ember-cli-es5-shim to version 0.3.0 🚀 [\#19](https://github.com/echobind/ember-links-with-follower/pull/19) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
 ## [v0.2.1](https://github.com/echobind/ember-links-with-follower/tree/v0.2.1) (2016-06-06)
 [Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.2.0...v0.2.1)
 
