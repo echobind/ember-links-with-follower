@@ -8,29 +8,43 @@ import { addListener, removeListener } from 'ember-metal/events';
 import jQuery from 'jquery';
 import getOwner from 'ember-getowner-polyfill';
 
+/**
+ * A component that renders a follower line underneath provided "links".
+ * Expects a block to be passed that contains a set of links to render.
+ *
+ * ```hbs
+ * \{{#links-with-follower class="my-nav"}}
+ *   {{#link-to 'route1' tagName='li'}}Route 1{{/link-to}}
+ *   {{#link-to 'route2' tagName='li'}}Route 2{{/link-to}}
+ * {{/links-with-follower}}
+ * ```
+ *
+ * @class LinksWithFollower
+ * @module Components
+ */
 export default Ember.Component.extend({
   layout,
   tagName: 'nav',
   classNames: ['links-with-follower'],
 
   /**
-   * Tag name to use for the link list parent element.
+   * Tag name to use for the element wrapping the provided links.
    *
-   * @property listSelector
+   * @property containerTagName
    * @type {String}
    * @default 'ul'
    */
-  listSelector: 'ul',
+  containerTagName: 'ul',
 
   /**
    * Tag name to use for the follower. It is expected to match items passed
    * in via the block.
    *
-   * @property childSelector
+   * @property linkTagName
    * @type {String}
    * @default 'li'
    */
-  childSelector: 'li',
+  linkTagName: 'li',
 
   /**
    * The selector used to consider a link active.
@@ -87,12 +101,12 @@ export default Ember.Component.extend({
    * @private
    */
   _assertChildrenMatchSelector() {
-    let listSelector = this.get('listSelector');
-    let childSelector = this.get('childSelector');
-    let children = emberArray(this.$(`${listSelector}`).children().toArray());
-    let childrenMatch = children.every((c) => jQuery(c).is(childSelector));
+    let containerTagName = this.get('containerTagName');
+    let linkTagName = this.get('linkTagName');
+    let children = emberArray(this.$(`${containerTagName}`).children().toArray());
+    let childrenMatch = children.every((c) => jQuery(c).is(linkTagName));
 
-    assert(`children in block must match the 'childSelector' property`, childrenMatch);
+    assert(`children in block must match the 'linkTagName' property`, childrenMatch);
   },
 
   /**
