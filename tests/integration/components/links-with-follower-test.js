@@ -43,7 +43,7 @@ describeComponent(
     describe('allows custom tags for the list parent', function() {
       beforeEach(function() {
         this.render(hbs`
-          {{#links-with-follower listSelector='ol'}}
+          {{#links-with-follower containerTagName='ol'}}
             <li>one</li>
           {{/links-with-follower}}
         `)
@@ -57,7 +57,7 @@ describeComponent(
     describe('allows custom tags for the children and follower', function() {
       beforeEach(function() {
         this.render(hbs`
-          {{#links-with-follower childSelector='div'}}
+          {{#links-with-follower linkTagName='div'}}
             <div>one</div>
           {{/links-with-follower}}
         `);
@@ -72,21 +72,21 @@ describeComponent(
       it('throws an error', function() {
         expect(() => {
           this.render(hbs`
-            {{#links-with-follower childSelector='div'}}
+            {{#links-with-follower linkTagName='div'}}
               <li>one</li>
             {{/links-with-follower}}
           `);
-        }).to.throw(/children in block must match the 'childSelector' property/);
+        }).to.throw(/children in block must match the 'linkTagName' property/);
       });
     });
 
     describe('clicking a link', function() {
-      it('moves follower to the active link position')
-      it('changes width of follower to width of active link');
+      it.skip('moves follower to the active link position')
+      it.skip('changes width of follower to width of active link');
     });
 
     describe('no active link', function() {
-      it('hides the follower');
+      it.skip('hides the follower');
     });
   }
 );
