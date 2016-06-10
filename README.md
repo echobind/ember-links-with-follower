@@ -10,10 +10,10 @@ Provides a component that renders a set of links with a follower line underneath
 
 This pattern is commonly used for navigation:
 
-![twitter](https://raw.githubusercontent.com/echobind/ember-links-with-follower/master/public/images/twitter.png)
+![twitter](https://raw.githubusercontent.com/echobind/ember-links-with-follower/master/public/assets/images/twitter.png)
 (from Twitter app)
 
-![linkedin](https://raw.githubusercontent.com/echobind/ember-links-with-follower/master/public/images/linkedin.png)
+![linkedin](https://raw.githubusercontent.com/echobind/ember-links-with-follower/master/public/assets/images/linkedin.png)
 (from LinkedIn app)
 
 If your app uses [Velocity.js](http://julian.com/research/velocity) (included with Liquid Fire), it will be used for animating position and size. Otherwise, jQuery's [animate](http://api.jquery.com/animate) will be used.
