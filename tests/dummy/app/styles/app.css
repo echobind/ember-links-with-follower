@@ -1,0 +1,9 @@
+@import 'normalize.css/normalize';
+@import 'variables';
+@import 'typography';
+@import 'layout';
+@import 'icon-nav';
+
+body {
+  background: var(--white);
+}

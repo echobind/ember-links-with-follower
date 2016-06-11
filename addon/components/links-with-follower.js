@@ -7,6 +7,7 @@ import { A as emberArray } from 'ember-array/utils';
 import { addListener, removeListener } from 'ember-metal/events';
 import jQuery from 'jquery';
 import getOwner from 'ember-getowner-polyfill';
+import { cancel, next } from 'ember-runloop';
 
 /**
  * A component that renders a follower line underneath provided "links".
@@ -84,13 +85,14 @@ export default Ember.Component.extend({
     this._super(...arguments);
 
     this._assertChildrenMatchSelector();
-    this._moveFollower(false);
+    this.nextRun = next(this, this._moveFollower, false);
   },
 
   willDestroy() {
     this._super(...arguments);
 
     removeListener(this.router, 'willTransition', this, this._queueMoveFollower);
+    cancel(this.nextRun);
     this.router = null;
   },
 

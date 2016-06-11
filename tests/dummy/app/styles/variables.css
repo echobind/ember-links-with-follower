@@ -1,0 +1,10 @@
+:root {
+  --white: #FCFFF7;
+  --yellow: #FFE900;
+  --blue: #21A0A0;
+  --dark-blue: #046865;
+  --orange: #F66307;
+
+  --link-color: var(--orange);
+  --text-color: #333;
+}
