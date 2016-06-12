@@ -1,0 +1,35 @@
+:root {
+  --active-menu-color: var(--orange);
+  --inactive-menu-color: #aaa;
+}
+
+.icon-nav {
+  font-size: 2rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.icon-nav li {
+  padding: 0.5rem 1rem;
+  line-height: 1;
+  transition: color 0.3s;
+  color: var(--inactive-menu-color);
+
+  &.active {
+    color: var(--active-menu-color);
+  }
+}
+
+.icon-nav .link-follower {
+  border-color: var(--active-menu-color);
+}
+
+.back-home {
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.back-home small {
+  font-size: 0.5rem;
+  color: #333;
+}

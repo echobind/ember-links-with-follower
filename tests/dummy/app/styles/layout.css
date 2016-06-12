@@ -1,0 +1,68 @@
+html, body, body > .ember-view {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--orange);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: var(--dark-blue);
+  color: var(--white);
+  padding: 0.5rem;
+}
+
+.header__logo {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.github-link {
+  margin-left: auto;
+  color: var(--white);
+}
+
+.github-icon {
+  margin-right: 0.3rem;
+  font-size: 1.5rem;
+}
+
+.app-version {
+  font-size: 0.8rem;
+
+  &:before {
+    content: 'v';
+  }
+}
+
+main {
+  flex: 1;
+  overflow: auto;
+  padding: 2rem;
+}
+
+section.content {
+  margin-top: 2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+footer img {
+  width: 100px;
+}

@@ -1,17 +1,48 @@
-<h2>Links with Follower</h2>
+<div class="app-container">
+  <header>
+    <h1 class="header__logo">
+      {{fa-icon 'link'}}
+      with _
+    </h1>
 
-{{#links-with-follower class="my-nav"}}
-  {{#link-to 'index' tagName='li'}}
-    Home
-  {{/link-to}}
+    <a href="https://github.com/echobind/ember-links-with-follower" class="github-link" target="_blank">
+      {{fa-icon 'github' class="github-icon"}}
+      {{app-version class="app-version"}}
+    </a>
+  </header>
 
-  {{#link-to 'page1' tagName='li'}}
-    This is really a much longer link
-  {{/link-to}}
+  <main>
+    <div class="back-home">
+      {{#link-to 'index'}}
+        Back Home <small>(notice follower still works)</small>
+      {{/link-to}}
+    </div>
 
-  {{#link-to 'page2' tagName='li'}}
-    Page 2
-  {{/link-to}}
-{{/links-with-follower}}
+    {{#links-with-follower class="icon-nav"}}
+      {{#link-to 'index' tagName='li'}}
+        {{fa-icon 'home'}}
+      {{/link-to}}
 
-{{outlet}}
+      {{#link-to 'page1' tagName='li'}}
+        {{fa-icon 'space-shuttle' flip='horizontal'}}
+        {{fa-icon 'ship'}}
+        {{fa-icon 'coffee'}}
+        {{fa-icon 'space-shuttle'}}
+      {{/link-to}}
+
+      {{#link-to 'page2' tagName='li'}}
+        {{fa-icon 'bolt'}}
+      {{/link-to}}
+    {{/links-with-follower}}
+
+    <section class="content">
+      {{outlet}}
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://echobind.com" target="_blank">
+      <img src="https://s3.amazonaws.com/echobind/images/brought-to-you.png">
+    </a>
+  </footer>
+</div>

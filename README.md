@@ -20,6 +20,8 @@ This pattern is commonly used for navigation:
 
 If your app uses [Velocity.js](http://julian.com/research/velocity) (included with Liquid Fire), it will be used for animating position and size. Otherwise, jQuery's [animate](http://api.jquery.com/animate) will be used.
 
+Since Links with Follower hooks in to the Router's `willTransition` event, you can use `link-to` or `transitionTo` and the follower will still update properly.
+
 ## Installation
 
 ```
@@ -49,6 +51,15 @@ Render custom tags, change the active selector, and animate slowly:
   {{#link-to "Stuff" tagName="div"}}Stuff{{/link-to}}
 
 {{/links-with-follower}}
+```
+
+Customize the follower with css:
+
+```css
+.my-nav .link-follower {
+  border-color: tomato;
+  border-size: 3px;
+}
 ```
 
 ## How does this work?
