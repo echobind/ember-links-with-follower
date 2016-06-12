@@ -1,5 +1,15 @@
 # Change Log
 
+## [v0.2.3](https://github.com/echobind/ember-links-with-follower/tree/v0.2.3) (2016-06-12)
+[Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.2.2...v0.2.3)
+
+- Add decent demo page [\#11](https://github.com/echobind/ember-links-with-follower/issues/11)
+
+- Spruce up demo app. Initially position follower in next run loop. [\#23](https://github.com/echobind/ember-links-with-follower/pull/23) ([cball](https://github.com/cball))
+- Update ember-cli to version 2.6.1 🚀 [\#22](https://github.com/echobind/ember-links-with-follower/pull/22) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-eslint to version 1.5.0 🚀 [\#17](https://github.com/echobind/ember-links-with-follower/pull/17) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-github-pages to version 0.1.0 🚀 [\#16](https://github.com/echobind/ember-links-with-follower/pull/16) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
 ## [v0.2.2](https://github.com/echobind/ember-links-with-follower/tree/v0.2.2) (2016-06-10)
 [Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.2.1...v0.2.2)
 
