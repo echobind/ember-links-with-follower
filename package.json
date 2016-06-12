@@ -9,7 +9,7 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember try:testall"
+    "test": "ember try:each"
   },
   "repository": {
     "type": "git",
@@ -39,7 +39,7 @@
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-cli-yuidoc": "0.8.3",
-    "ember-data": "^2.5.0",
+    "ember-data": "^2.6.0",
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-export-application-global": "^1.0.5",
     "ember-getowner-polyfill": "1.0.1",
