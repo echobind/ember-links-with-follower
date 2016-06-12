@@ -70,9 +70,11 @@ An active link is defined by the `activeSelector` property, which defaults to `'
 
 ## Helpful Links
 
-- ### [Demo](http://echobind.github.io/ember-links-with-follower)
+- ### [Demo](https://echobind.github.io/ember-links-with-follower)
 
 - ### [Changelog](CHANGELOG.md)
+
+- ### [Docs](https://echobind.github.io/ember-links-with-follower/docs/classes/LinksWithFollower.html)
 
 ## Legal
 [Echobind](https://echobind.com) LLC (c) 2016

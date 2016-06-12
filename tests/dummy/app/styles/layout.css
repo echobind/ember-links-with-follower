@@ -42,10 +42,6 @@ header {
 
 .app-version {
   font-size: 0.8rem;
-
-  &:before {
-    content: 'v';
-  }
 }
 
 main {
