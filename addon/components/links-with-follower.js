@@ -157,6 +157,7 @@ export default Ember.Component.extend({
   _moveFollower(animate=true) {
     let width = this._widthOfActiveLink();
     let left = this._leftPositionOfActiveLink();
+    left = left + this._marginLeftOfActiveLink();
     let shouldHideFollower = isEmpty(width) || isEmpty(left);
 
     this._hideFollower(shouldHideFollower);
@@ -213,7 +214,7 @@ export default Ember.Component.extend({
   _widthOfActiveLink() {
     let activeLink = this._activeLink();
 
-    return activeLink.outerWidth(true);
+    return activeLink.outerWidth();
   },
 
   /**
@@ -227,6 +228,13 @@ export default Ember.Component.extend({
     let offset = activeLink.position() || { left: 0 };
 
     return offset.left;
+  },
+
+  _marginLeftOfActiveLink() {
+    let activeLink = this._activeLink();
+    let marginLeft = activeLink.css('marginLeft');
+
+    return parseInt(marginLeft);
   },
 
   /**
