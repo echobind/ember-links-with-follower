@@ -39,7 +39,7 @@
             
               <div class="footer">
                 <a href="https://github.com/echobind/links-with-follower" class="github">GitHub</a>
-                <p class="version pull-right">0.2.3.f180aa85</p>
+                <p class="version pull-right">v0.2.4</p>
               </div>
             </div>
         </div>
@@ -163,7 +163,7 @@ export default Ember.Component.extend({
     this._super(...arguments);
 
     this._assertChildrenMatchSelector();
-    this.nextRun = next(this, this._moveFollower, false);
+    this._ensureCorrectInitialPosition();
   },
 
   willDestroy() {
@@ -172,6 +172,35 @@ export default Ember.Component.extend({
     removeListener(this.router, &#x27;willTransition&#x27;, this, this._queueMoveFollower);
     cancel(this.nextRun);
     this.router = null;
+  },
+
+  /**
+   * Ensures the position of the follower is correct.
+   *
+   * @private
+   */
+  _ensureCorrectInitialPosition() {
+    this._ensureCorrectPositionOnNextRun();
+    this._ensureCorrectPositionOnWindowLoad();
+  },
+
+  /**
+   * Ensures the position of the follower on the next run.
+   *
+   * @private
+   */
+  _ensureCorrectPositionOnNextRun() {
+    this.nextRun = next(this, this._moveFollower, false);
+  },
+
+  /**
+   * Ensures the initial position of the follower is correct, even if font or
+   * image assets are slow to load.
+   *
+   * @private
+   */
+  _ensureCorrectPositionOnWindowLoad() {
+    window.onload = () =&gt; this._moveFollower(false);
   },
 
   /**

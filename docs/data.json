@@ -3,7 +3,7 @@
         "name": "ember-links-with-follower",
         "description": "An Ember component to render a set of links with a \"follower\" line underneath. The follower moves to the active link, matching size and position on the page.",
         "url": "https://github.com/echobind/links-with-follower",
-        "version": "0.2.3.f180aa85"
+        "version": "v0.2.4"
     },
     "files": {
         "addon/components/html-tag.js": {
@@ -153,6 +153,33 @@
         {
             "file": "addon/components/links-with-follower.js",
             "line": 99,
+            "description": "Ensures the position of the follower is correct.",
+            "access": "private",
+            "tagname": "",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 109,
+            "description": "Ensures the position of the follower on the next run.",
+            "access": "private",
+            "tagname": "",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 118,
+            "description": "Ensures the initial position of the follower is correct, even if font or\nimage assets are slow to load.",
+            "access": "private",
+            "tagname": "",
+            "class": "LinksWithFollower",
+            "module": "Components"
+        },
+        {
+            "file": "addon/components/links-with-follower.js",
+            "line": 128,
             "description": "Asserts that children passed in via block match the provided childSelector\nproperty.",
             "access": "private",
             "tagname": "",
@@ -161,7 +188,7 @@
         },
         {
             "file": "addon/components/links-with-follower.js",
-            "line": 114,
+            "line": 143,
             "description": "Queues moving of a follower.",
             "access": "private",
             "tagname": "",
@@ -170,7 +197,7 @@
         },
         {
             "file": "addon/components/links-with-follower.js",
-            "line": 122,
+            "line": 151,
             "description": "Moves and resizes the link follower to match the currently active link.",
             "params": [
                 {
@@ -186,7 +213,7 @@
         },
         {
             "file": "addon/components/links-with-follower.js",
-            "line": 137,
+            "line": 166,
             "description": "Shows or hides the follower link.",
             "params": [
                 {
@@ -202,7 +229,7 @@
         },
         {
             "file": "addon/components/links-with-follower.js",
-            "line": 157,
+            "line": 186,
             "description": "Animates a follower to its final width / position.",
             "params": [
                 {
@@ -223,7 +250,7 @@
         },
         {
             "file": "addon/components/links-with-follower.js",
-            "line": 178,
+            "line": 207,
             "description": "Gets the width of the active link.",
             "return": {
                 "description": "The width including margins/padding",
@@ -236,7 +263,7 @@
         },
         {
             "file": "addon/components/links-with-follower.js",
-            "line": 190,
+            "line": 219,
             "description": "Gets the left position of the active link.",
             "return": {
                 "description": "The left position or 0 if it cannot be determined",
@@ -249,7 +276,7 @@
         },
         {
             "file": "addon/components/links-with-follower.js",
-            "line": 203,
+            "line": 232,
             "description": "Gets the active link based on `activeSelector`.",
             "return": {
                 "description": "The results of the jQuery selector",
@@ -263,36 +290,48 @@
     ],
     "warnings": [
         {
-            "message": "Missing item type\nAsserts that children passed in via block match the provided childSelector\nproperty.",
+            "message": "Missing item type\nEnsures the position of the follower is correct.",
             "line": " addon/components/links-with-follower.js:99"
         },
         {
+            "message": "Missing item type\nEnsures the position of the follower on the next run.",
+            "line": " addon/components/links-with-follower.js:109"
+        },
+        {
+            "message": "Missing item type\nEnsures the initial position of the follower is correct, even if font or\nimage assets are slow to load.",
+            "line": " addon/components/links-with-follower.js:118"
+        },
+        {
+            "message": "Missing item type\nAsserts that children passed in via block match the provided childSelector\nproperty.",
+            "line": " addon/components/links-with-follower.js:128"
+        },
+        {
             "message": "Missing item type\nQueues moving of a follower.",
-            "line": " addon/components/links-with-follower.js:114"
+            "line": " addon/components/links-with-follower.js:143"
         },
         {
             "message": "Missing item type\nMoves and resizes the link follower to match the currently active link.",
-            "line": " addon/components/links-with-follower.js:122"
+            "line": " addon/components/links-with-follower.js:151"
         },
         {
             "message": "Missing item type\nShows or hides the follower link.",
-            "line": " addon/components/links-with-follower.js:137"
+            "line": " addon/components/links-with-follower.js:166"
         },
         {
             "message": "Missing item type\nAnimates a follower to its final width / position.",
-            "line": " addon/components/links-with-follower.js:157"
+            "line": " addon/components/links-with-follower.js:186"
         },
         {
             "message": "Missing item type\nGets the width of the active link.",
-            "line": " addon/components/links-with-follower.js:178"
+            "line": " addon/components/links-with-follower.js:207"
         },
         {
             "message": "Missing item type\nGets the left position of the active link.",
-            "line": " addon/components/links-with-follower.js:190"
+            "line": " addon/components/links-with-follower.js:219"
         },
         {
             "message": "Missing item type\nGets the active link based on `activeSelector`.",
-            "line": " addon/components/links-with-follower.js:203"
+            "line": " addon/components/links-with-follower.js:232"
         }
     ]
 }
