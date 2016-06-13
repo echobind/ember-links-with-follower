@@ -1,5 +1,11 @@
 # Change Log
 
+## [v0.2.4](https://github.com/echobind/ember-links-with-follower/tree/v0.2.4) (2016-06-12)
+[Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.2.3...v0.2.4)
+
+- Ensure position of follower is correct on window load. Starts follower at 0px width. [\#26](https://github.com/echobind/ember-links-with-follower/pull/26) ([cball](https://github.com/cball))
+- Update a few links, remove v from the app version since tags will include it. [\#24](https://github.com/echobind/ember-links-with-follower/pull/24) ([cball](https://github.com/cball))
+
 ## [v0.2.3](https://github.com/echobind/ember-links-with-follower/tree/v0.2.3) (2016-06-12)
 [Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.2.2...v0.2.3)
 
