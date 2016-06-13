@@ -85,7 +85,7 @@ export default Ember.Component.extend({
     this._super(...arguments);
 
     this._assertChildrenMatchSelector();
-    this.nextRun = next(this, this._moveFollower, false);
+    this._ensureCorrectInitialPosition();
   },
 
   willDestroy() {
@@ -94,6 +94,35 @@ export default Ember.Component.extend({
     removeListener(this.router, 'willTransition', this, this._queueMoveFollower);
     cancel(this.nextRun);
     this.router = null;
+  },
+
+  /**
+   * Ensures the position of the follower is correct.
+   *
+   * @private
+   */
+  _ensureCorrectInitialPosition() {
+    this._ensureCorrectPositionOnNextRun();
+    this._ensureCorrectPositionOnWindowLoad();
+  },
+
+  /**
+   * Ensures the position of the follower on the next run.
+   *
+   * @private
+   */
+  _ensureCorrectPositionOnNextRun() {
+    this.nextRun = next(this, this._moveFollower, false);
+  },
+
+  /**
+   * Ensures the initial position of the follower is correct, even if font or
+   * image assets are slow to load.
+   *
+   * @private
+   */
+  _ensureCorrectPositionOnWindowLoad() {
+    window.onload = () => this._moveFollower(false);
   },
 
   /**
