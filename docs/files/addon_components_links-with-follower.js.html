@@ -39,7 +39,7 @@
             
               <div class="footer">
                 <a href="https://github.com/echobind/links-with-follower" class="github">GitHub</a>
-                <p class="version pull-right">v0.2.4</p>
+                <p class="version pull-right">v0.2.5</p>
               </div>
             </div>
         </div>
@@ -235,6 +235,7 @@ export default Ember.Component.extend({
   _moveFollower(animate=true) {
     let width = this._widthOfActiveLink();
     let left = this._leftPositionOfActiveLink();
+    left = left + this._marginLeftOfActiveLink();
     let shouldHideFollower = isEmpty(width) || isEmpty(left);
 
     this._hideFollower(shouldHideFollower);
@@ -291,7 +292,7 @@ export default Ember.Component.extend({
   _widthOfActiveLink() {
     let activeLink = this._activeLink();
 
-    return activeLink.outerWidth(true);
+    return activeLink.outerWidth();
   },
 
   /**
@@ -305,6 +306,13 @@ export default Ember.Component.extend({
     let offset = activeLink.position() || { left: 0 };
 
     return offset.left;
+  },
+
+  _marginLeftOfActiveLink() {
+    let activeLink = this._activeLink();
+    let marginLeft = activeLink.css(&#x27;marginLeft&#x27;);
+
+    return parseInt(marginLeft);
   },
 
   /**
