@@ -1,6 +1,11 @@
 # Change Log
 
-## [v0.2.4](https://github.com/echobind/ember-links-with-follower/tree/v0.2.4) (2016-06-12)
+## [v0.2.5](https://github.com/echobind/ember-links-with-follower/tree/v0.2.5) (2016-06-14)
+[Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.2.4...v0.2.5)
+
+- Better handle margins on links [\#27](https://github.com/echobind/ember-links-with-follower/pull/27) ([cball](https://github.com/cball))
+
+## [v0.2.4](https://github.com/echobind/ember-links-with-follower/tree/v0.2.4) (2016-06-13)
 [Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.2.3...v0.2.4)
 
 - Ensure position of follower is correct on window load. Starts follower at 0px width. [\#26](https://github.com/echobind/ember-links-with-follower/pull/26) ([cball](https://github.com/cball))
