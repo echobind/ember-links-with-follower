@@ -4,6 +4,7 @@
 [![npm version](https://badge.fury.io/js/ember-links-with-follower.svg)](http://badge.fury.io/js/ember-links-with-follower)
 [![Code Climate](https://codeclimate.com/github/echobind/ember-links-with-follower/badges/gpa.svg)](https://codeclimate.com/github/echobind/ember-links-with-follower)
 [![Dependency Status](https://david-dm.org/echobind/ember-links-with-follower.svg)](https://david-dm.org/echobind/ember-links-with-follower)
+[![Ember Observer Score](http://emberobserver.com/badges/ember-links-with-follower.svg)](http://emberobserver.com/addons/ember-links-with-follower)
 
 ## Features
 Provides a component that renders a set of links with a follower line underneath. The follower will animate to the position of the active link, and grow or shrink in size if needed. If no active links are found, the follower will hide.
