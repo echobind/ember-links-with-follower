@@ -86,7 +86,8 @@ export default Ember.Component.extend({
     this._assertChildrenMatchSelector();
     this._ensureCorrectInitialPosition();
 
-    this.$(window).on(`resize.${this.get('elementId')}`, () => { debounce(this, this._moveFollower, false, 20) });
+    this._onResizeHandler = () => { debounce(this, this._moveFollower, false, 20) };
+    this._installResizeListener();
   },
 
   willDestroy() {
@@ -96,7 +97,7 @@ export default Ember.Component.extend({
     cancel(this.nextRun);
     this.router = null;
 
-    this.$(window).on(`resize.${this.get('elementId')}`);
+    this._uninstallResizeListener();
   },
 
   /**
@@ -126,6 +127,24 @@ export default Ember.Component.extend({
    */
   _ensureCorrectPositionOnWindowLoad() {
     window.onload = () => this._moveFollower(false);
+  },
+
+  /**
+   * Adds event listener to update the follower after a browser resize
+   *
+   * @private
+   */
+  _installResizeListener() {
+    window.addEventListener('resize', this._onResizeHandler);
+  },
+
+  /**
+   * Removes event listener to update the follower after a browser resize
+   *
+   * @private
+   */
+  _uninstallResizeListener() {
+    window.removeEventListener('resize', this._onResizeHandler);
   },
 
   /**
