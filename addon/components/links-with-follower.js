@@ -1,13 +1,12 @@
 import Ember from 'ember';
 import layout from '../templates/components/links-with-follower';
-import { scheduleOnce } from 'ember-runloop';
+import { scheduleOnce, cancel, next, debounce } from 'ember-runloop';
 import { isEmpty } from 'ember-utils';
 import { assert } from 'ember-metal/utils';
 import { A as emberArray } from 'ember-array/utils';
 import { addListener, removeListener } from 'ember-metal/events';
 import jQuery from 'jquery';
 import getOwner from 'ember-getowner-polyfill';
-import { cancel, next } from 'ember-runloop';
 
 /**
  * A component that renders a follower line underneath provided "links".
@@ -86,6 +85,8 @@ export default Ember.Component.extend({
 
     this._assertChildrenMatchSelector();
     this._ensureCorrectInitialPosition();
+
+    this.$(window).on(`resize.${this.get('elementId')}`, () => { debounce(this, this._moveFollower, false, 20) });
   },
 
   willDestroy() {
@@ -94,6 +95,8 @@ export default Ember.Component.extend({
     removeListener(this.router, 'willTransition', this, this._queueMoveFollower);
     cancel(this.nextRun);
     this.router = null;
+
+    this.$(window).on(`resize.${this.get('elementId')}`);
   },
 
   /**
