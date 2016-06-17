@@ -1,5 +1,14 @@
 # Change Log
 
+## [v0.2.6](https://github.com/echobind/ember-links-with-follower/tree/v0.2.6) (2016-06-17)
+[Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.2.5...v0.2.6)
+
+- Update ember-cli-eslint to version 1.6.0 🚀 [\#34](https://github.com/echobind/ember-links-with-follower/pull/34) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-mocha to version 0.10.4 🚀 [\#33](https://github.com/echobind/ember-links-with-follower/pull/33) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Added a resize handler to update position after a browser resize. [\#31](https://github.com/echobind/ember-links-with-follower/pull/31) ([chrism](https://github.com/chrism))
+- Adding the ember observer badge to the README [\#29](https://github.com/echobind/ember-links-with-follower/pull/29) ([myared](https://github.com/myared))
+- Update ember-cli-blanket to version 0.9.5 🚀 [\#28](https://github.com/echobind/ember-links-with-follower/pull/28) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
 ## [v0.2.5](https://github.com/echobind/ember-links-with-follower/tree/v0.2.5) (2016-06-14)
 [Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.2.4...v0.2.5)
 
