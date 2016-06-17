@@ -39,7 +39,7 @@
             
               <div class="footer">
                 <a href="https://github.com/echobind/links-with-follower" class="github">GitHub</a>
-                <p class="version pull-right">v0.2.5</p>
+                <p class="version pull-right">v0.2.6</p>
               </div>
             </div>
         </div>
@@ -78,14 +78,13 @@
     <pre class="prettyprint linenums">
 import Ember from &#x27;ember&#x27;;
 import layout from &#x27;../templates/components/links-with-follower&#x27;;
-import { scheduleOnce } from &#x27;ember-runloop&#x27;;
+import { scheduleOnce, cancel, next, debounce } from &#x27;ember-runloop&#x27;;
 import { isEmpty } from &#x27;ember-utils&#x27;;
 import { assert } from &#x27;ember-metal/utils&#x27;;
 import { A as emberArray } from &#x27;ember-array/utils&#x27;;
 import { addListener, removeListener } from &#x27;ember-metal/events&#x27;;
 import jQuery from &#x27;jquery&#x27;;
 import getOwner from &#x27;ember-getowner-polyfill&#x27;;
-import { cancel, next } from &#x27;ember-runloop&#x27;;
 
 /**
  * A component that renders a follower line underneath provided &quot;links&quot;.
@@ -164,6 +163,9 @@ export default Ember.Component.extend({
 
     this._assertChildrenMatchSelector();
     this._ensureCorrectInitialPosition();
+
+    this._onResizeHandler = () =&gt; { debounce(this, this._moveFollower, false, 20) };
+    this._installResizeListener();
   },
 
   willDestroy() {
@@ -172,6 +174,8 @@ export default Ember.Component.extend({
     removeListener(this.router, &#x27;willTransition&#x27;, this, this._queueMoveFollower);
     cancel(this.nextRun);
     this.router = null;
+
+    this._uninstallResizeListener();
   },
 
   /**
@@ -201,6 +205,24 @@ export default Ember.Component.extend({
    */
   _ensureCorrectPositionOnWindowLoad() {
     window.onload = () =&gt; this._moveFollower(false);
+  },
+
+  /**
+   * Adds event listener to update the follower after a browser resize
+   *
+   * @private
+   */
+  _installResizeListener() {
+    window.addEventListener(&#x27;resize&#x27;, this._onResizeHandler);
+  },
+
+  /**
+   * Removes event listener to update the follower after a browser resize
+   *
+   * @private
+   */
+  _uninstallResizeListener() {
+    window.removeEventListener(&#x27;resize&#x27;, this._onResizeHandler);
   },
 
   /**
