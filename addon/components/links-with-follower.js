@@ -1,13 +1,12 @@
 import Ember from 'ember';
 import layout from '../templates/components/links-with-follower';
-import { scheduleOnce } from 'ember-runloop';
+import { scheduleOnce, cancel, next, debounce } from 'ember-runloop';
 import { isEmpty } from 'ember-utils';
 import { assert } from 'ember-metal/utils';
 import { A as emberArray } from 'ember-array/utils';
 import { addListener, removeListener } from 'ember-metal/events';
 import jQuery from 'jquery';
 import getOwner from 'ember-getowner-polyfill';
-import { cancel, next } from 'ember-runloop';
 
 /**
  * A component that renders a follower line underneath provided "links".
@@ -86,6 +85,9 @@ export default Ember.Component.extend({
 
     this._assertChildrenMatchSelector();
     this._ensureCorrectInitialPosition();
+
+    this._onResizeHandler = () => { debounce(this, this._moveFollower, false, 20) };
+    this._installResizeListener();
   },
 
   willDestroy() {
@@ -94,6 +96,8 @@ export default Ember.Component.extend({
     removeListener(this.router, 'willTransition', this, this._queueMoveFollower);
     cancel(this.nextRun);
     this.router = null;
+
+    this._uninstallResizeListener();
   },
 
   /**
@@ -123,6 +127,24 @@ export default Ember.Component.extend({
    */
   _ensureCorrectPositionOnWindowLoad() {
     window.onload = () => this._moveFollower(false);
+  },
+
+  /**
+   * Adds event listener to update the follower after a browser resize
+   *
+   * @private
+   */
+  _installResizeListener() {
+    window.addEventListener('resize', this._onResizeHandler);
+  },
+
+  /**
+   * Removes event listener to update the follower after a browser resize
+   *
+   * @private
+   */
+  _uninstallResizeListener() {
+    window.removeEventListener('resize', this._onResizeHandler);
   },
 
   /**
