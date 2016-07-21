@@ -12,26 +12,34 @@ module.exports = function(defaults) {
       optional: ['es7.decorators']
     },
     postcssOptions: {
-      plugins: [
-        {
-          module: postcssImport,
-          options: {}
-        },
-        {
-          module: cssnext,
-          options: {
-            browsers: ['last 2 version']
+      compile: {
+        enabled: true,
+        plugins: [
+          {
+            module: postcssImport,
+            options: {}
           }
-        },
-        {
-          module: cssnano,
-          options: {}
-        },
-        {
-          module: reporter,
-          options: {}
-        }
-      ]
+        ]
+      },
+      filter: {
+        enabled: true,
+        plugins: [
+          {
+            module: cssnext,
+            options: {
+              browsers: ['last 2 version']
+            }
+          },
+          {
+            module: cssnano,
+            options: {}
+          },
+          {
+            module: reporter,
+            options: {}
+          }
+        ]
+      }
     }
   });
 
