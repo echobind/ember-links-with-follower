@@ -86,7 +86,19 @@ describeComponent(
     });
 
     describe('no active link', function() {
-      it.skip('hides the follower');
+      beforeEach(function() {
+        this.render(hbs`
+          {{#links-with-follower linkTagName='div'}}
+            <div>one</div>
+            <div>two</div>
+            <div>three</div>
+          {{/links-with-follower}}
+        `);
+      });
+
+      it('hides the follower', function() {
+        expect(this.$('li.link-follower').is(':visible')).not.to.be.ok;
+      });
     });
   }
 );
