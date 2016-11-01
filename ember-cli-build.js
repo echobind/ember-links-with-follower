@@ -2,7 +2,6 @@
 /* global require, module */
 var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 var postcssImport = require('postcss-import');
-var reporter = require('postcss-reporter');
 var cssnext = require('postcss-cssnext');
 var cssnano = require('cssnano');
 
@@ -32,10 +31,6 @@ module.exports = function(defaults) {
           },
           {
             module: cssnano,
-            options: {}
-          },
-          {
-            module: reporter,
             options: {}
           }
         ]
