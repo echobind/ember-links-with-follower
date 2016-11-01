@@ -1,4 +1,5 @@
 /* jshint expr:true */
+import Ember from 'ember';
 import { expect } from 'chai';
 import {
   describeComponent,
@@ -9,6 +10,10 @@ import {
   describe
 } from 'mocha';
 import hbs from 'htmlbars-inline-precompile';
+
+const {
+  run
+} = Ember;
 
 describeComponent(
   'links-with-follower',
@@ -81,8 +86,59 @@ describeComponent(
     });
 
     describe('clicking a link', function() {
-      it.skip('moves follower to the active link position')
-      it.skip('changes width of follower to width of active link');
+      let router;
+
+      beforeEach(function() {
+        this.register('router:main', Ember.Object.extend(Ember.Evented));
+
+        router = this.container.lookup('router:main');
+
+        this.render(hbs`
+          {{#links-with-follower class="icon-nav"}}
+            <li class="active">One</li>
+            <li>Two</li>
+            <li class="long">Three Four Five Six</li>
+          {{/links-with-follower}}
+        `);
+      });
+
+      it('moves follower to the active link position', function(done) {
+        let $follower = this.$('.link-follower');
+
+        run.later(function() {
+          expect($follower.position().left).to.equal(this.$('.active').position().left);
+        }, 10);
+
+        run.later(function() {
+          this.$('.active').removeClass('active');
+          this.$('.long').addClass('active');
+          router.trigger('willTransition');
+        }, 20);
+
+        run.later(function() {
+          expect($follower.position().left).to.equal(this.$('.active').position().left);
+          done();
+        }, 30);
+      });
+
+      it('changes width of follower to width of active link', function(done) {
+        let $follower = this.$('.link-follower');
+
+        run.later(function() {
+          expect($follower.outerWidth()).to.equal(this.$('.active').outerWidth());
+        }, 10);
+
+        run.later(function() {
+          this.$('.active').removeClass('active');
+          this.$('.long').addClass('active');
+          router.trigger('willTransition');
+        }, 20);
+
+        run.later(function() {
+          expect($follower.outerWidth()).to.equal(this.$('.active').outerWidth());
+          done();
+        }, 30);
+      });
     });
 
     describe('no active link', function() {

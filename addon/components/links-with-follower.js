@@ -62,7 +62,7 @@ export default Ember.Component.extend({
    * @type {Number}
    * @default 150
    */
-  followerAnimationDuration: 150,
+  followerAnimationDuration: (Ember.testing) ? 0 : 150,
 
   /**
    * Where to position the follower. Not yet used.
