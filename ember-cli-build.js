@@ -3,7 +3,6 @@
 var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 var postcssImport = require('postcss-import');
 var cssnext = require('postcss-cssnext');
-var cssnano = require('cssnano');
 
 module.exports = function(defaults) {
   var app = new EmberAddon(defaults, {
@@ -28,10 +27,6 @@ module.exports = function(defaults) {
             options: {
               browsers: ['last 2 version']
             }
-          },
-          {
-            module: cssnano,
-            options: {}
           }
         ]
       }
