@@ -110,18 +110,16 @@ describeComponent(
 
         run.later(() => {
           expect($follower.position().left).to.equal(this.$('.active').position().left);
-        }, 10);
 
-        run.later(() => {
-          this.$('.active').removeClass('active');
-          this.$('.long').addClass('active');
-          router.trigger('willTransition');
-        }, 20);
+          run(() => {
+            this.$('.active').removeClass('active');
+            this.$('.long').addClass('active');
+            router.trigger('willTransition');
+          });
 
-        run.later(() => {
           expect($follower.position().left).to.equal(this.$('.active').position().left);
           done();
-        }, 30);
+        }, 10);
       });
 
       it('changes width of follower to width of active link', function(done) {
@@ -129,18 +127,17 @@ describeComponent(
 
         run.later(() => {
           expect($follower.outerWidth()).to.equal(this.$('.active').outerWidth());
-        }, 10);
 
-        run.later(() => {
-          this.$('.active').removeClass('active');
-          this.$('.long').addClass('active');
-          router.trigger('willTransition');
-        }, 20);
+          run(() => {
+            this.$('.active').removeClass('active');
+            this.$('.long').addClass('active');
+            router.trigger('willTransition');
+          });
 
-        run.later(() => {
           expect($follower.outerWidth()).to.equal(this.$('.active').outerWidth());
+
           done();
-        }, 30);
+        }, 10);
       });
     });
 
