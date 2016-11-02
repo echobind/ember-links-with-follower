@@ -25,8 +25,6 @@ describeComponent(
   function() {
     describe('default usage', function() {
       beforeEach(function() {
-        Configuration.load({  followerAnimationDuration: 0 });
-
         this.render(hbs`
           {{#links-with-follower}}
             <li>One</li>
@@ -92,6 +90,8 @@ describeComponent(
       let router;
 
       beforeEach(function() {
+        Configuration.load({  followerAnimationDuration: 0 });
+
         this.register('router:main', Ember.Object.extend(Ember.Evented));
 
         router = this.container.lookup('router:main');
@@ -108,17 +108,17 @@ describeComponent(
       it('moves follower to the active link position', function(done) {
         let $follower = this.$('.link-follower');
 
-        run.later(function() {
+        run.later(() => {
           expect($follower.position().left).to.equal(this.$('.active').position().left);
         }, 10);
 
-        run.later(function() {
+        run.later(() => {
           this.$('.active').removeClass('active');
           this.$('.long').addClass('active');
           router.trigger('willTransition');
         }, 20);
 
-        run.later(function() {
+        run.later(() => {
           expect($follower.position().left).to.equal(this.$('.active').position().left);
           done();
         }, 30);
@@ -127,17 +127,17 @@ describeComponent(
       it('changes width of follower to width of active link', function(done) {
         let $follower = this.$('.link-follower');
 
-        run.later(function() {
+        run.later(() => {
           expect($follower.outerWidth()).to.equal(this.$('.active').outerWidth());
         }, 10);
 
-        run.later(function() {
+        run.later(() => {
           this.$('.active').removeClass('active');
           this.$('.long').addClass('active');
           router.trigger('willTransition');
         }, 20);
 
-        run.later(function() {
+        run.later(() => {
           expect($follower.outerWidth()).to.equal(this.$('.active').outerWidth());
           done();
         }, 30);
