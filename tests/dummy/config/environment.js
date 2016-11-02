@@ -32,6 +32,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
+    ENV['ember-links-with-follower'] = {
+      followerAnimationDuration: 0
+    };
+
     // Testem prefers this...
     ENV.locationType = 'none';
 

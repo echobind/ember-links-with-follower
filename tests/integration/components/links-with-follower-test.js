@@ -10,6 +10,7 @@ import {
   describe
 } from 'mocha';
 import hbs from 'htmlbars-inline-precompile';
+import Configuration from 'ember-links-with-follower/configuration';
 
 const {
   run
@@ -24,6 +25,8 @@ describeComponent(
   function() {
     describe('default usage', function() {
       beforeEach(function() {
+        Configuration.load({  followerAnimationDuration: 0 });
+
         this.render(hbs`
           {{#links-with-follower}}
             <li>One</li>
