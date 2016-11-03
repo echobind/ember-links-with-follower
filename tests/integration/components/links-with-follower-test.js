@@ -105,7 +105,7 @@ describeComponent(
       it('moves follower to the active link position', function(done) {
         let $follower = this.$('.link-follower');
 
-        run.later(() => {
+        run.next(() => {
           expect($follower.position().left).to.equal(this.$('.active').position().left);
 
           run(() => {
@@ -116,13 +116,13 @@ describeComponent(
 
           expect($follower.position().left).to.equal(this.$('.active').position().left);
           done();
-        }, 10);
+        });
       });
 
       it('changes width of follower to width of active link', function(done) {
         let $follower = this.$('.link-follower');
 
-        run.later(() => {
+        run.next(() => {
           expect($follower.outerWidth()).to.equal(this.$('.active').outerWidth());
 
           run(() => {
@@ -134,7 +134,7 @@ describeComponent(
           expect($follower.outerWidth()).to.equal(this.$('.active').outerWidth());
 
           done();
-        }, 10);
+        });
       });
     });
 
