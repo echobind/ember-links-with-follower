@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
-const { getWithDefault, typeOf } = Ember;
+const { getWithDefault, testing, typeOf } = Ember;
 
 const DEFAULTS = {
-  followerAnimationDuration: 150
+  followerAnimationDuration: testing ? 0 : 150
 };
 
 export default {

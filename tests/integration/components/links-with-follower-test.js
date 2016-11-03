@@ -10,7 +10,6 @@ import {
   describe
 } from 'mocha';
 import hbs from 'htmlbars-inline-precompile';
-import Configuration from 'ember-links-with-follower/configuration';
 
 const {
   run
@@ -90,8 +89,6 @@ describeComponent(
       let router;
 
       beforeEach(function() {
-        Configuration.load({  followerAnimationDuration: 0 });
-
         this.register('router:main', Ember.Object.extend(Ember.Evented));
 
         router = this.container.lookup('router:main');
