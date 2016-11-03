@@ -216,7 +216,7 @@ export default Ember.Component.extend({
    * Animates a follower to its final width / position.
    *
    * @param  {Boolean} animate=true If the follower should animate or not
-   * @param  {Object} options={}    Animate options passed to velocity or jQuery
+   * @param  {Object} options={}    Animate options passed to jQuery's css method
    * @private
    */
   _animateFollower(animate=true, options={}) {
