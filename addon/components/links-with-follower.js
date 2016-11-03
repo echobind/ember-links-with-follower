@@ -5,8 +5,10 @@ import { isEmpty } from 'ember-utils';
 import { assert } from 'ember-metal/utils';
 import { A as emberArray } from 'ember-array/utils';
 import { addListener, removeListener } from 'ember-metal/events';
+import computed from 'ember-computed';
 import jQuery from 'jquery';
 import getOwner from 'ember-getowner-polyfill';
+import Configuration from '../configuration';
 
 /**
  * A component that renders a follower line underneath provided "links".
@@ -62,7 +64,11 @@ export default Ember.Component.extend({
    * @type {Number}
    * @default 150
    */
-  followerAnimationDuration: 150,
+  followerAnimationDuration: computed({
+    get() {
+      return Configuration.followerAnimationDuration;
+    }
+  }),
 
   /**
    * Where to position the follower. Not yet used.
