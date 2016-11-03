@@ -221,16 +221,15 @@ export default Ember.Component.extend({
    */
   _animateFollower(animate=true, options={}) {
     let follower = this.$('.link-follower');
+    let duration = (animate) ? this.get('followerAnimationDuration') : 0;
+    let { left, width } = options;
+    let css = {
+      transform: `translate3d(${left}px, 0px, 0px)`,
+      transitionDuration: `${duration}ms`,
+      width
+    };
 
-    if (animate) {
-      if (follower.velocity) {
-        follower.velocity(options, this.get('followerAnimationDuration'));
-      } else {
-        follower.animate(options, this.get('followerAnimationDuration'));
-      }
-    } else {
-      follower.css(options);
-    }
+    follower.css(css);
   },
 
   /**
