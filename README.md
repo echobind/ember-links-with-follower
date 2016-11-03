@@ -19,7 +19,7 @@ This pattern is commonly used for navigation:
 
 (from LinkedIn app)
 
-If your app uses [Velocity.js](http://julian.com/research/velocity) (included with Liquid Fire), it will be used for animating position and size. Otherwise, jQuery's [animate](http://api.jquery.com/animate) will be used.
+Animation of the follower is done through CSS [transition](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) and [transform](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) using [translate3d](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#translate3d()). The transitions duration will be set to 0 on window resize to avoid issues with animating while resizing.
 
 Since Links with Follower hooks in to the Router's `willTransition` event, you can use `link-to` or `transitionTo` and the follower will still update properly.
 

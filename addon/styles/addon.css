@@ -9,11 +9,13 @@
   cursor: pointer;
 }
 
-.link-follower {
+.links-with-follower .link-follower {
   border-bottom: 2px solid black;
   position: absolute;
   bottom: 0;
   width: 0px;
   padding: 0 !important;
   margin: 0 !important;
+  transition: transform 150ms ease-in, width 150ms ease-in;
+  left: 0;
 }

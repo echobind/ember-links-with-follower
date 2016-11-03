@@ -216,21 +216,20 @@ export default Ember.Component.extend({
    * Animates a follower to its final width / position.
    *
    * @param  {Boolean} animate=true If the follower should animate or not
-   * @param  {Object} options={}    Animate options passed to velocity or jQuery
+   * @param  {Object} options={} The animated properties, left and width, passed to jQuery's css method
    * @private
    */
   _animateFollower(animate=true, options={}) {
     let follower = this.$('.link-follower');
+    let duration = (animate) ? this.get('followerAnimationDuration') : 0;
+    let { left, width } = options;
+    let css = {
+      transform: `translate3d(${left}px, 0px, 0px)`,
+      transitionDuration: `${duration}ms`,
+      width
+    };
 
-    if (animate) {
-      if (follower.velocity) {
-        follower.velocity(options, this.get('followerAnimationDuration'));
-      } else {
-        follower.animate(options, this.get('followerAnimationDuration'));
-      }
-    } else {
-      follower.css(options);
-    }
+    follower.css(css);
   },
 
   /**
