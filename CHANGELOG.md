@@ -1,5 +1,42 @@
 # Change Log
 
+## [v0.3.0](https://github.com/echobind/ember-links-with-follower/tree/v0.3.0) (2016-11-03)
+[Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.2.6...v0.3.0)
+
+- Implement PR template for contribution details [\#87](https://github.com/echobind/ember-links-with-follower/issues/87)
+- Use css transforms for positioning [\#36](https://github.com/echobind/ember-links-with-follower/issues/36)
+- Adds PR template [\#88](https://github.com/echobind/ember-links-with-follower/pull/88) ([alvincrespo](https://github.com/alvincrespo))
+- Implements CSS based animation for follower [\#86](https://github.com/echobind/ember-links-with-follower/pull/86) ([alvincrespo](https://github.com/alvincrespo))
+
+- Installing addon gives missing dependency error for getowner-polyfill [\#79](https://github.com/echobind/ember-links-with-follower/issues/79)
+- Ensures getowner-polyfill installs as a dependency [\#80](https://github.com/echobind/ember-links-with-follower/pull/80) ([alvincrespo](https://github.com/alvincrespo))
+
+- Move CI to CircleCI [\#81](https://github.com/echobind/ember-links-with-follower/issues/81)
+- Swallows missing link error [\#77](https://github.com/echobind/ember-links-with-follower/issues/77)
+- Could not find module `ember-getowner-polyfill` imported from `ember-links-with-follower/components/links-with-follower` [\#56](https://github.com/echobind/ember-links-with-follower/issues/56)
+- Add missing tests [\#46](https://github.com/echobind/ember-links-with-follower/issues/46)
+- Reset on window resize [\#35](https://github.com/echobind/ember-links-with-follower/issues/35)
+- Resizing window doesn't update follower [\#30](https://github.com/echobind/ember-links-with-follower/issues/30)
+
+- Move to circle for CI [\#85](https://github.com/echobind/ember-links-with-follower/pull/85) ([cball](https://github.com/cball))
+- Update packages, add yarn lockfile. [\#84](https://github.com/echobind/ember-links-with-follower/pull/84) ([cball](https://github.com/cball))
+- Adds tests for positioning, width and inactive link [\#82](https://github.com/echobind/ember-links-with-follower/pull/82) ([alvincrespo](https://github.com/alvincrespo))
+- Upgrade to 2.7.0 [\#78](https://github.com/echobind/ember-links-with-follower/pull/78) ([alvincrespo](https://github.com/alvincrespo))
+- Update ember-cli to version 2.9.1 🚀 [\#75](https://github.com/echobind/ember-links-with-follower/pull/75) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-eslint to version 3.0.0 🚀 [\#64](https://github.com/echobind/ember-links-with-follower/pull/64) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-eslint to version 1.8.0 🚀 [\#62](https://github.com/echobind/ember-links-with-follower/pull/62) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-font-awesome to version 2.2.0 🚀 [\#61](https://github.com/echobind/ember-links-with-follower/pull/61) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-ajax to version 2.5.1 🚀 [\#60](https://github.com/echobind/ember-links-with-follower/pull/60) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-app-version to version 2.0.0 🚀 [\#58](https://github.com/echobind/ember-links-with-follower/pull/58) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-blanket to version 0.9.8 🚀 [\#57](https://github.com/echobind/ember-links-with-follower/pull/57) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update demo site with new github link [\#54](https://github.com/echobind/ember-links-with-follower/pull/54) ([elbeezy](https://github.com/elbeezy))
+- Update ember-cli-github-pages to version 0.1.2 🚀 [\#52](https://github.com/echobind/ember-links-with-follower/pull/52) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-yuidoc to version 0.8.7 🚀 [\#45](https://github.com/echobind/ember-links-with-follower/pull/45) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli to version 2.6.3 🚀 [\#42](https://github.com/echobind/ember-links-with-follower/pull/42) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-eslint to version 1.7.0 🚀 [\#41](https://github.com/echobind/ember-links-with-follower/pull/41) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-postcss to version 3.0.1 🚀 [\#40](https://github.com/echobind/ember-links-with-follower/pull/40) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-yuidoc to version 0.8.4 🚀 [\#38](https://github.com/echobind/ember-links-with-follower/pull/38) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
 ## [v0.2.6](https://github.com/echobind/ember-links-with-follower/tree/v0.2.6) (2016-06-17)
 [Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.2.5...v0.2.6)
 
