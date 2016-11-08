@@ -1,6 +1,6 @@
 # ember-links-with-follower
 
-[![Build Status](https://travis-ci.org/echobind/ember-links-with-follower.svg)](https://travis-ci.org/echobind/ember-links-with-follower)
+[![CircleCI](https://circleci.com/gh/echobind/ember-links-with-follower.svg?style=svg)](https://circleci.com/gh/echobind/ember-links-with-follower)
 [![npm version](https://badge.fury.io/js/ember-links-with-follower.svg)](http://badge.fury.io/js/ember-links-with-follower)
 [![Code Climate](https://codeclimate.com/github/echobind/ember-links-with-follower/badges/gpa.svg)](https://codeclimate.com/github/echobind/ember-links-with-follower)
 [![Dependency Status](https://david-dm.org/echobind/ember-links-with-follower.svg)](https://david-dm.org/echobind/ember-links-with-follower)
