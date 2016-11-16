@@ -3,75 +3,112 @@
 <head>
     <meta charset="utf-8">
     <title>addon/components/links-with-follower.js - ember-links-with-follower</title>
+    <meta name="description" content="An Ember component to render a set of links with a &quot;follower&quot; line underneath. The follower moves to the active link, matching size and position on the page.">
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
     <link rel="stylesheet" href="../assets/css/custom.css">
     <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/theme.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700' rel='stylesheet' type='text/css'>
+    
 </head>
 <body>
-    <div class="row">
-        <div class="sidebar-container">
-            <div id="sidebar">
-              <div class="header">
-                <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
-                  <a href="../">ember-links-with-follower</a>
-                </h1>
-                <form class="navbar-form">
-                    <input type="search" class="search-query" placeholder="Search classes/modules...">
-                </form>
-              </div>
-              <ul class="main-nav">
-                <li class="section">Modules</li>
-                   <li  >
-                     <a href="../modules/Components.html">Components</a>
-                   </li>
-                   <li  >
-                     <a href="../modules/Home.html">Home</a>
-                   </li>
-            
-                <li class="section">Classes</li>
-                    <li ><a  href="../classes/HtmlTag.html">HtmlTag</a></li>
-                    <li ><a  href="../classes/LinksWithFollower.html">LinksWithFollower</a></li>
-              </ul>
-            
-              <div class="footer">
-                <a href="https://github.com/echobind/links-with-follower" class="github">GitHub</a>
-                <p class="version pull-right">v0.2.6</p>
-              </div>
-            </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">
+            <img src="../assets/img/ember-logo.png" alt="">
+            <span>links-with-follower</span>
+          </a>
         </div>
-        <div class="content-container">
-            <div class="apidocs">
-                <div id="docs-main">
-                    <div class="content">
-                        <form id="options-form" class="form-inline pull-right">
-                            Show:
-                            <label for="api-show-inherited" class="checkbox">
-                                <input type="checkbox" id="api-show-inherited" checked>
-                                Inherited
-                            </label>
-                    
-                            <label for="api-show-protected" class="checkbox">
-                                <input type="checkbox" id="api-show-protected">
-                                Protected
-                            </label>
-                    
-                            <label for="api-show-private" class="checkbox">
-                                <input type="checkbox" id="api-show-private">
-                                Private
-                            </label>
-                            <label for="api-show-deprecated" class="checkbox">
-                                <input type="checkbox" id="api-show-deprecated">
-                                Deprecated
-                            </label>
-                    
-                        </form>
-                    
+
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/echobind/ember-links-with-follower" class="fa fa-github github"></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="main-wrapper" class="row">
+        <div id="content-wrapper">
+            <ol class="panel-group" id="sidebar" role="tablist" aria-multiselectable="true">
+                <li class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="sidebar-search-heading">
+                        <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" href="#sidebar-search" aria-expanded="true" aria-controls="collapseOne">
+                        Search
+                      </a>
+                    </h4>
+                    </div>
+                    <div id="sidebar-search" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="sidebar-search-heading">
+                        <div class="panel-body">
+                            <div id="api-tabview-filter">
+                                <input type="search" id="api-filter" placeholder="Search...">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                    <li class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="sidebar-version-heading">
+                            <h4 class="panel-title">
+                                <a role="button" href="https://github.com/echobind/ember-links-with-follower/commits/v0.4.0" target="_blank">
+                                  Tag: v0.4.0
+                                </a>
+                            </h4>
+                        </div>
+                    </li>
+                <li class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="sidebar-modules-heading">
+                        <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" href="#sidebar-modules" aria-expanded="true" aria-controls="collapseOne">
+                      Modules
+                    </a>
+                  </h4>
+                    </div>
+                    <div id="sidebar-modules" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="sidebar-modules-heading">
+                        <div class="panel-body">
+                                <ol>
+                                        <li>
+                                            <a href="../modules/Components.html">Components</a>
+                                        </li>
+                                        <li>
+                                            <a href="../modules/Home.html">Home</a>
+                                        </li>
+                                </ol>
+                        </div>
+                    </div>
+                </li>
+            
+                <li class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="sidebar-classes-heading">
+                        <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" href="#sidebar-classes" aria-expanded="true" aria-controls="collapseOne">
+                        Classes
+                      </a>
+                    </h4>
+                    </div>
+                    <div id="sidebar-classes" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="sidebar-classes-heading">
+                        <div class="panel-body">
+                            <ol>
+                                    <li>
+                                        <a href="../classes/HtmlTag.html">HtmlTag</a>
+                                    </li>
+                                    <li>
+                                        <a href="../classes/LinksWithFollower.html">LinksWithFollower</a>
+                                    </li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+            <div class="content-container">
+                <div class="apidocs">
+                    <div id="docs-main">
+                        <div class="content">
 <div class="page-header">
-    <h1>addon/components/links-with-follower.js <small>File</small></h1>
+    <h1><i class="fa fa-file-code-o" aria-hidden="true"></i> addon/components/links-with-follower.js File</h1>
 </div>
 
 <div class="file">
@@ -83,8 +120,10 @@ import { isEmpty } from &#x27;ember-utils&#x27;;
 import { assert } from &#x27;ember-metal/utils&#x27;;
 import { A as emberArray } from &#x27;ember-array/utils&#x27;;
 import { addListener, removeListener } from &#x27;ember-metal/events&#x27;;
+import computed from &#x27;ember-computed&#x27;;
 import jQuery from &#x27;jquery&#x27;;
 import getOwner from &#x27;ember-getowner-polyfill&#x27;;
+import Configuration from &#x27;../configuration&#x27;;
 
 /**
  * A component that renders a follower line underneath provided &quot;links&quot;.
@@ -140,7 +179,11 @@ export default Ember.Component.extend({
    * @type {Number}
    * @default 150
    */
-  followerAnimationDuration: 150,
+  followerAnimationDuration: computed({
+    get() {
+      return Configuration.followerAnimationDuration;
+    }
+  }),
 
   /**
    * Where to position the follower. Not yet used.
@@ -288,21 +331,20 @@ export default Ember.Component.extend({
    * Animates a follower to its final width / position.
    *
    * @param  {Boolean} animate=true If the follower should animate or not
-   * @param  {Object} options={}    Animate options passed to velocity or jQuery
+   * @param  {Object} options={} The animated properties, left and width, passed to jQuery&#x27;s css method
    * @private
    */
   _animateFollower(animate=true, options={}) {
     let follower = this.$(&#x27;.link-follower&#x27;);
+    let duration = (animate) ? this.get(&#x27;followerAnimationDuration&#x27;) : 0;
+    let { left, width } = options;
+    let css = {
+      transform: &#x60;translate3d(${left}px, 0px, 0px)&#x60;,
+      transitionDuration: &#x60;${duration}ms&#x60;,
+      width
+    };
 
-    if (animate) {
-      if (follower.velocity) {
-        follower.velocity(options, this.get(&#x27;followerAnimationDuration&#x27;));
-      } else {
-        follower.animate(options, this.get(&#x27;followerAnimationDuration&#x27;));
-      }
-    } else {
-      follower.css(options);
-    }
+    follower.css(css);
   },
 
   /**
@@ -351,6 +393,7 @@ export default Ember.Component.extend({
 
     </pre>
 </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -358,8 +401,10 @@ export default Ember.Component.extend({
     </div>
     <script src="../assets/vendor/prettify/prettify-min.js"></script>
     <script>prettyPrint();</script>
-    <script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
     <script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="../assets/vendor/github-slugger/slugger.js"></script>
     <script src="../assets/js/yuidoc-bootstrap.js"></script>
 </body>
 </html>
