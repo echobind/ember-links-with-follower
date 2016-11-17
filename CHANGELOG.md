@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.4.0](https://github.com/echobind/ember-links-with-follower/tree/v0.4.0) (2016-11-16)
+[Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.3.0...v0.4.0)
+
+- Allow followerAnimationDuration to be customizable by the consuming app [\#83](https://github.com/echobind/ember-links-with-follower/issues/83)
+
+- Replace Travis build badge with CircleCI build badge [\#91](https://github.com/echobind/ember-links-with-follower/issues/91)
+
+- Update ember-cli-postcss to version 3.0.6 🚀 [\#94](https://github.com/echobind/ember-links-with-follower/pull/94) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-mocha to version 0.11.0 🚀 [\#93](https://github.com/echobind/ember-links-with-follower/pull/93) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Updates README to use the CircleCI build badge [\#92](https://github.com/echobind/ember-links-with-follower/pull/92) ([alvincrespo](https://github.com/alvincrespo))
+- Released v0.3.0 [\#89](https://github.com/echobind/ember-links-with-follower/pull/89) ([alvincrespo](https://github.com/alvincrespo))
+
 ## [v0.3.0](https://github.com/echobind/ember-links-with-follower/tree/v0.3.0) (2016-11-03)
 [Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.2.6...v0.3.0)
 
