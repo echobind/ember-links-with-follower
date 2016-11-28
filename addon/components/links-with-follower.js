@@ -186,9 +186,8 @@ export default Ember.Component.extend({
   _moveFollower(animate=true) {
     let activeLink = this._activeLink();
 
-    if (!activeLink) {
-      warn('No active link found.', !activeLink);
-      return;
+    if (activeLink.length === 0) {
+      this._hideFollower();
     }
 
     let width = this._widthOfActiveLink();

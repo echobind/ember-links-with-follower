@@ -164,7 +164,7 @@ describeComponent(
       });
 
       it('warns user that there is no active link', function() {
-        expect(Ember.warn.calledOnce).to.be.ok;
+        expect(Ember.warn.called).to.be.ok;
       });
 
       it('hides the follower', function() {
