@@ -183,6 +183,12 @@ export default Ember.Component.extend({
    * @private
    */
   _moveFollower(animate=true) {
+    let activeLink = this._activeLink();
+
+    if (activeLink.length === 0) {
+      this._hideFollower();
+    }
+
     let width = this._widthOfActiveLink();
     let left = this._leftPositionOfActiveLink();
     left = left + this._marginLeftOfActiveLink();
