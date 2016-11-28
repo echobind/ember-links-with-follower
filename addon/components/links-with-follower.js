@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/links-with-follower';
+import { warn } from 'ember-debug';
 import { scheduleOnce, cancel, next, debounce } from 'ember-runloop';
 import { isEmpty } from 'ember-utils';
 import { assert } from 'ember-metal/utils';
@@ -183,6 +184,13 @@ export default Ember.Component.extend({
    * @private
    */
   _moveFollower(animate=true) {
+    let activeLink = this._activeLink();
+
+    if (!activeLink) {
+      warn('No active link found.', !activeLink);
+      return;
+    }
+
     let width = this._widthOfActiveLink();
     let left = this._leftPositionOfActiveLink();
     left = left + this._marginLeftOfActiveLink();
