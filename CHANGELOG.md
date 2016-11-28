@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.4.1](https://github.com/echobind/ember-links-with-follower/tree/v0.4.1) (2016-11-28)
+[Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.4.0...v0.4.1)
+
+- Released v0.4.0 [\#95](https://github.com/echobind/ember-links-with-follower/pull/95) ([alvincrespo](https://github.com/alvincrespo))
+
+- If no active link, warn user and return immediately [\#100](https://github.com/echobind/ember-links-with-follower/pull/100) ([alvincrespo](https://github.com/alvincrespo))
+
+- When visiting a route outside the menu, the calculations for finding the active link breaks because there is no active link. [\#99](https://github.com/echobind/ember-links-with-follower/issues/99)
+
+- Update ember-cli-mocha to version 0.12.1 🚀 [\#97](https://github.com/echobind/ember-links-with-follower/pull/97) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-mocha to version 0.12.0 🚀 [\#96](https://github.com/echobind/ember-links-with-follower/pull/96) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
 ## [v0.4.0](https://github.com/echobind/ember-links-with-follower/tree/v0.4.0) (2016-11-16)
 [Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.3.0...v0.4.0)
 
