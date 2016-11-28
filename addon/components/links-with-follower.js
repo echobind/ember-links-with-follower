@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import layout from '../templates/components/links-with-follower';
-import { warn } from 'ember-debug';
 import { scheduleOnce, cancel, next, debounce } from 'ember-runloop';
 import { isEmpty } from 'ember-utils';
 import { assert } from 'ember-metal/utils';
