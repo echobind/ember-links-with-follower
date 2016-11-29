@@ -183,6 +183,10 @@ export default Ember.Component.extend({
    * @private
    */
   _moveFollower(animate=true) {
+    if (this.isDestroying || this.isDestroyed) {
+      return;
+    }
+    
     let activeLink = this._activeLink();
 
     if (activeLink.length === 0) {
