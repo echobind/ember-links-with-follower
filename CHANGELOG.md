@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.4.2](https://github.com/echobind/ember-links-with-follower/tree/v0.4.2) (2016-11-28)
+[Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.4.1...v0.4.2)
+
+- Check for destroyed state before moving follower [\#103](https://github.com/echobind/ember-links-with-follower/pull/103) ([alvincrespo](https://github.com/alvincrespo))
+
+- Released v0.4.1 [\#102](https://github.com/echobind/ember-links-with-follower/pull/102) ([alvincrespo](https://github.com/alvincrespo))
+
 ## [v0.4.1](https://github.com/echobind/ember-links-with-follower/tree/v0.4.1) (2016-11-28)
 [Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.4.0...v0.4.1)
 
