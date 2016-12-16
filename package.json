@@ -47,7 +47,7 @@
     "loader.js": "^4.0.10",
     "normalize.css": "^4.1.1",
     "postcss-cssnext": "^2.7.0",
-    "postcss-import": "^8.1.2"
+    "postcss-import": "^9.0.0"
   },
   "keywords": [
     "ember-addon"
