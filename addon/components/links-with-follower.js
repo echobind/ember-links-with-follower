@@ -213,10 +213,6 @@ export default Ember.Component.extend({
 
     if (shouldHideFollower) {
       follower.hide();
-
-      Ember.warn('No active link found. Hiding follower', false, {
-        id: 'ember-debug.links-with-follower-no-active'
-      });
     } else {
       follower.show();
     }
