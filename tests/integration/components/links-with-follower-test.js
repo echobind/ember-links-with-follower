@@ -6,6 +6,7 @@ import { beforeEach, describe } from 'mocha';
 import hbs from 'htmlbars-inline-precompile';
 
 const {
+  getOwner,
   run
 } = Ember;
 
@@ -142,7 +143,7 @@ describeComponent(
           {{/links-with-follower}}
         `);
 
-        Ember.getOwner(this).lookup('router:main').trigger('willTransition');
+        getOwner(this).lookup('router:main').trigger('willTransition');
       });
 
       it('hides the follower', function() {
