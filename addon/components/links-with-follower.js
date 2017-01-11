@@ -7,8 +7,11 @@ import { A as emberArray } from 'ember-array/utils';
 import { addListener, removeListener } from 'ember-metal/events';
 import computed from 'ember-computed';
 import jQuery from 'jquery';
-import getOwner from 'ember-getowner-polyfill';
 import Configuration from '../configuration';
+
+const {
+  getOwner
+} = Ember;
 
 /**
  * A component that renders a follower line underneath provided "links".
@@ -213,10 +216,6 @@ export default Ember.Component.extend({
 
     if (shouldHideFollower) {
       follower.hide();
-
-      Ember.warn('No active link found. Hiding follower', false, {
-        id: 'ember-debug.links-with-follower-no-active'
-      });
     } else {
       follower.show();
     }

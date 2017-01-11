@@ -1,19 +1,12 @@
 /* jshint expr:true */
 import Ember from 'ember';
 import { expect } from 'chai';
-import {
-  describeComponent,
-  it
-} from 'ember-mocha';
-import {
-  afterEach,
-  beforeEach,
-  describe
-} from 'mocha';
+import { describeComponent, it } from 'ember-mocha';
+import { beforeEach, describe } from 'mocha';
 import hbs from 'htmlbars-inline-precompile';
-import sinon from 'sinon';
 
 const {
+  getOwner,
   run
 } = Ember;
 
@@ -141,8 +134,6 @@ describeComponent(
     });
 
     describe('no active link', function() {
-      let sandbox;
-
       beforeEach(function() {
         this.render(hbs`
           {{#links-with-follower linkTagName='div'}}
@@ -152,19 +143,7 @@ describeComponent(
           {{/links-with-follower}}
         `);
 
-        sandbox = sinon.sandbox.create();
-
-        sandbox.spy(Ember, 'warn');
-
-        Ember.getOwner(this).lookup('router:main').trigger('willTransition');
-      });
-
-      afterEach(function() {
-        sandbox.restore();
-      });
-
-      it('warns user that there is no active link', function() {
-        expect(Ember.warn.called).to.be.ok;
+        getOwner(this).lookup('router:main').trigger('willTransition');
       });
 
       it('hides the follower', function() {
