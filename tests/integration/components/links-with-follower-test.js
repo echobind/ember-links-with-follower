@@ -14,6 +14,7 @@ import hbs from 'htmlbars-inline-precompile';
 import sinon from 'sinon';
 
 const {
+  getOwner,
   run
 } = Ember;
 
@@ -156,7 +157,7 @@ describeComponent(
 
         sandbox.spy(Ember, 'warn');
 
-        Ember.getOwner(this).lookup('router:main').trigger('willTransition');
+        getOwner(this).lookup('router:main').trigger('willTransition');
       });
 
       afterEach(function() {
