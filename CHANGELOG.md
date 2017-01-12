@@ -1,6 +1,27 @@
 # Change Log
 
-## [v0.4.2](https://github.com/echobind/ember-links-with-follower/tree/v0.4.2) (2016-11-28)
+## [v0.5.0](https://github.com/echobind/ember-links-with-follower/tree/v0.5.0) (2017-01-12)
+[Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.4.2...v0.5.0)
+
+- Remove warning [\#118](https://github.com/echobind/ember-links-with-follower/issues/118)
+
+- Use Ember.getOwner [\#119](https://github.com/echobind/ember-links-with-follower/issues/119)
+
+- Replaces getOwner polyfill for Ember.getOwner [\#121](https://github.com/echobind/ember-links-with-follower/pull/121) ([alvincrespo](https://github.com/alvincrespo))
+- Removes warning and sinon dependency [\#120](https://github.com/echobind/ember-links-with-follower/pull/120) ([alvincrespo](https://github.com/alvincrespo))
+- Update ember-cli-eslint to version 3.0.2 🚀 [\#117](https://github.com/echobind/ember-links-with-follower/pull/117) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-chai to version 0.3.2 🚀 [\#115](https://github.com/echobind/ember-links-with-follower/pull/115) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-ajax to version 2.5.3 🚀 [\#114](https://github.com/echobind/ember-links-with-follower/pull/114) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-mocha to version 0.13.1 🚀 [\#113](https://github.com/echobind/ember-links-with-follower/pull/113) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-getowner-polyfill to version 1.1.1 🚀 [\#112](https://github.com/echobind/ember-links-with-follower/pull/112) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-sinon to version 0.6.0 🚀 [\#110](https://github.com/echobind/ember-links-with-follower/pull/110) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-postcss to version 3.1.0 🚀 [\#109](https://github.com/echobind/ember-links-with-follower/pull/109) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update postcss-import to version 9.0.0 🚀 [\#107](https://github.com/echobind/ember-links-with-follower/pull/107) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-load-initializers to version 0.6.0 🚀 [\#106](https://github.com/echobind/ember-links-with-follower/pull/106) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli to version 2.10.0 🚀 [\#105](https://github.com/echobind/ember-links-with-follower/pull/105) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Released v0.4.2 [\#104](https://github.com/echobind/ember-links-with-follower/pull/104) ([alvincrespo](https://github.com/alvincrespo))
+
+## [v0.4.2](https://github.com/echobind/ember-links-with-follower/tree/v0.4.2) (2016-11-29)
 [Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.4.1...v0.4.2)
 
 - Check for destroyed state before moving follower [\#103](https://github.com/echobind/ember-links-with-follower/pull/103) ([alvincrespo](https://github.com/alvincrespo))
