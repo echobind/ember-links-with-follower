@@ -53,8 +53,8 @@
                     <li class="panel panel-default">
                         <div class="panel-heading" role="tab" id="sidebar-version-heading">
                             <h4 class="panel-title">
-                                <a role="button" href="https://github.com/echobind/ember-links-with-follower/commits/v0.4.2" target="_blank">
-                                  Tag: v0.4.2
+                                <a role="button" href="https://github.com/echobind/ember-links-with-follower/commits/v0.5.0" target="_blank">
+                                  Tag: v0.5.0
                                 </a>
                             </h4>
                         </div>
@@ -108,7 +108,7 @@
                     <div id="docs-main">
                         <div class="content">
 <div class="page-header">
-    <h1><i class="fa fa-file-code-o" aria-hidden="true"></i> addon/components/links-with-follower.js File</h1>
+    <h1><i class="fa fa-file-code-o" aria-hidden="true"></i>  File</h1>
 </div>
 
 <div class="file">
@@ -122,8 +122,11 @@ import { A as emberArray } from &#x27;ember-array/utils&#x27;;
 import { addListener, removeListener } from &#x27;ember-metal/events&#x27;;
 import computed from &#x27;ember-computed&#x27;;
 import jQuery from &#x27;jquery&#x27;;
-import getOwner from &#x27;ember-getowner-polyfill&#x27;;
 import Configuration from &#x27;../configuration&#x27;;
+
+const {
+  getOwner
+} = Ember;
 
 /**
  * A component that renders a follower line underneath provided &quot;links&quot;.
@@ -328,10 +331,6 @@ export default Ember.Component.extend({
 
     if (shouldHideFollower) {
       follower.hide();
-
-      Ember.warn(&#x27;No active link found. Hiding follower&#x27;, false, {
-        id: &#x27;ember-debug.links-with-follower-no-active&#x27;
-      });
     } else {
       follower.show();
     }
