@@ -1,17 +1,16 @@
 /* globals blanket, module */
 
 var options = {
-  modulePrefix: '',
+  modulePrefix: 'ember-links-with-follower',
   filter: '//.*ember-links-with-follower/.*/',
   antifilter: '//.*(tests|template).*/',
   loaderExclusions: [],
   enableCoverage: true,
   cliOptions: {
-    reporters: ['lcov'],
+    reporters: ['json'],
     autostart: true
   }
 };
-
 if (typeof exports === 'undefined') {
   blanket.options(options);
 } else {
