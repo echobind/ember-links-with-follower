@@ -18,7 +18,7 @@
   "author": "Chris Ball <chris@echobind.com>",
   "license": "MIT",
   "devDependencies": {
-    "babel-eslint": "^7.1.0",
+    "babel-eslint": "^7.2.3",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "2.5.4",
     "ember-cli": "2.10.0",
