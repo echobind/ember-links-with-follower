@@ -45,7 +45,7 @@
     "ember-load-initializers": "^0.6.0",
     "ember-resolver": "^2.0.3",
     "loader.js": "^4.0.10",
-    "normalize.css": "^4.1.1",
+    "normalize.css": "^7.0.0",
     "postcss-cssnext": "^2.7.0",
     "postcss-import": "^9.0.0"
   },
