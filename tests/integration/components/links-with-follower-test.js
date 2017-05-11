@@ -1,14 +1,10 @@
-/* jshint expr:true */
-import Ember from 'ember';
+import Evented from 'ember-evented';
+import run from 'ember-runloop';
+import getOwner from 'ember-owner/get';
 import { expect } from 'chai';
 import { setupComponentTest } from 'ember-mocha';
 import { beforeEach, describe, it } from 'mocha';
 import hbs from 'htmlbars-inline-precompile';
-
-const {
-  getOwner,
-  run
-} = Ember;
 
 describe('LinksWithFollowerComponent', function() {
   setupComponentTest('links-with-follower', { integration: true });
@@ -83,7 +79,8 @@ describe('LinksWithFollowerComponent', function() {
     let router;
 
     beforeEach(function() {
-      this.register('router:main', Ember.Object.extend(Ember.Evented));
+      // eslint-disable-next-line no-undef
+      this.register('router:main', Ember.Object.extend(Evented));
 
       router = this.container.lookup('router:main');
 
