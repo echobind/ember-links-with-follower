@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Component from 'ember-component';
 
 /**
  * A component used to dynamically render html tags.
@@ -10,5 +10,4 @@ import Ember from 'ember';
  * @class HtmlTag
  * @module Components
  */
-export default Ember.Component.extend({
-});
+export default Component.extend({});

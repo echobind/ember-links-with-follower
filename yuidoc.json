@@ -2,6 +2,7 @@
   "name": "ember-links-with-follower",
   "description": "An Ember component to render a set of links with a \"follower\" line underneath. The follower moves to the active link, matching size and position on the page.",
   "url": "https://github.com/echobind/ember-links-with-follower",
+  "version": "0.5.0",
   "options": {
     "enabledEnvironments": ["development", "production"],
     "paths": [

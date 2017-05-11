@@ -1,5 +1,4 @@
-/* jshint node:true */
-/* var RSVP = require('rsvp'); */
+/* eslint-env node */
 var execSync = require('child_process').execSync;
 
 module.exports = {
