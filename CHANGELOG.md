@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.6.0](https://github.com/echobind/ember-links-with-follower/tree/v0.6.0) (2017-05-11)
+[Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.5.0...v0.6.0)
+
+- Released v0.5.0 [\#122](https://github.com/echobind/ember-links-with-follower/pull/122) ([alvincrespo](https://github.com/alvincrespo))
+
+- Upgrading to Ember 2.13.1 [\#191](https://github.com/echobind/ember-links-with-follower/pull/191) ([alvincrespo](https://github.com/alvincrespo))
+- Update ember-font-awesome to version 3.0.3 🚀 [\#132](https://github.com/echobind/ember-links-with-follower/pull/132) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- ember-cli-babel@5.2.2 breaks build 🚨 [\#128](https://github.com/echobind/ember-links-with-follower/pull/128) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-mocha to version 0.13.2 🚀 [\#127](https://github.com/echobind/ember-links-with-follower/pull/127) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-ajax to version 2.5.4 🚀 [\#126](https://github.com/echobind/ember-links-with-follower/pull/126) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update ember-cli-postcss to version 3.1.1 🚀 [\#124](https://github.com/echobind/ember-links-with-follower/pull/124) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
 ## [v0.5.0](https://github.com/echobind/ember-links-with-follower/tree/v0.5.0) (2017-01-12)
 [Full Changelog](https://github.com/echobind/ember-links-with-follower/compare/v0.4.2...v0.5.0)
 
