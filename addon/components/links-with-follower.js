@@ -189,7 +189,7 @@ export default Ember.Component.extend({
     if (this.isDestroying || this.isDestroyed) {
       return;
     }
-    
+
     let activeLink = this._activeLink();
 
     if (activeLink.length === 0) {
