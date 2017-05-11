@@ -64,7 +64,10 @@ describe('LinksWithFollowerComponent', function() {
     });
   });
 
-  describe('block children and childSelector dont match', function() {
+
+  // Asserting error thrown no longer works as of ember 2.11
+  // TODO: Remove skip once https://github.com/emberjs/ember.js/issues/15013 is resolved.
+  describe.skip('block children and childSelector dont match', function() {
     it('throws an error', function() {
       expect(() => {
         this.render(hbs`
