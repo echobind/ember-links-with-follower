@@ -51,7 +51,7 @@
     "ember-source": "^2.13.0",
     "loader.js": "^4.2.3",
     "normalize.css": "^7.0.0",
-    "postcss-cssnext": "^2.10.0",
+    "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0"
   },
   "keywords": [
