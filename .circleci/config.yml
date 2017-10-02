@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:7.10.1-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-npm-deps-{{ checksum "package.json" }}
+            - v1-npm-deps
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-npm-deps-{{ checksum "package.json" }}
+      - restore_cache:
+          keys:
+            - v1-bower-deps-{{ checksum "bower.json" }}
+            - v1-bower-deps
+      - run: npm i bower
+      - run: ./node_modules/bower/bin/bower install
+      - save_cache:
+          paths:
+            - bower_components
+          key: v1-bower-deps-{{ checksum "bower.json" }}
+      - run: yarn test
