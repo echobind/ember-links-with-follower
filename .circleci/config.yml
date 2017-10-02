@@ -9,6 +9,8 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
+      - run: npm i -g bower
+      - run: bower install
       - run: yarn install
       - save_cache:
           paths:
