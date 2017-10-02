@@ -19,7 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "ember-cli-babel": "^6.1.0",
-    "ember-cli-htmlbars": "^1.1.1",
+    "ember-cli-htmlbars": "^2.0.1",
     "yuidoc-ember-theme": "github:offirgolan/yuidoc-ember-theme"
   },
   "devDependencies": {
