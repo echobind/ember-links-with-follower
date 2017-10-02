@@ -7,13 +7,20 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
-      - run: npm i -g bower
+            - v1-npm-deps-{{ checksum "package.json" }}
+            - v1-npm-deps
+      - restore_cache:
+          keys:
+            - v1-bower-deps-{{ checksum "bower.json" }}
+            - v1-bower-deps
       - run: bower install
       - run: yarn install
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: v1-npm-deps-{{ checksum "package.json" }}
+      - save_cache:
+          paths:
+            - bower_components
+          key: v1-bower-deps-{{ checksum "bower.json" }}
       - run: yarn test
