@@ -2387,7 +2387,7 @@ ember-ajax@^3.0.0:
   dependencies:
     ember-cli-babel "^6.0.0"
 
-ember-cli-app-version@^3.0.0:
+ember-cli-app-version@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/ember-cli-app-version/-/ember-cli-app-version-3.1.0.tgz#074b0330581a7b8ab094ff07fefb34e0d0254bfd"
   dependencies:
