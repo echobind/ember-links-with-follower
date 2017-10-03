@@ -2444,7 +2444,7 @@ ember-cli-broccoli-sane-watcher@^2.0.4:
     rsvp "^3.0.18"
     sane "^1.1.1"
 
-ember-cli-chai@^0.4.0:
+ember-cli-chai@^0.4.3:
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/ember-cli-chai/-/ember-cli-chai-0.4.3.tgz#24476e7065147e291cffae7f989d758a5a5a8b67"
   dependencies:
