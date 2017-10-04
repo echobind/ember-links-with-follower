@@ -2578,7 +2578,7 @@ ember-cli-path-utils@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ember-cli-path-utils/-/ember-cli-path-utils-1.0.0.tgz#4e39af8b55301cddc5017739b77a804fba2071ed"
 
-ember-cli-postcss@^3.3.0:
+ember-cli-postcss@^3.5.2:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/ember-cli-postcss/-/ember-cli-postcss-3.5.2.tgz#e79915e1ef6fe289a7f790d018bb50948ed94753"
   dependencies:
