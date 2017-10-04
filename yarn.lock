@@ -1738,8 +1738,8 @@ caniuse-api@^2.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000718, caniuse-lite@^1.0.30000726:
-  version "1.0.30000741"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000741.tgz#bc526bc2046e6bc38737cfd77d3026ef04b8f464"
+  version "1.0.30000743"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000743.tgz#f4f5c6750676ff8f6144ea40456c3729d5341769"
 
 capture-exit@^1.1.0:
   version "1.2.0"
@@ -2578,7 +2578,7 @@ ember-cli-path-utils@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ember-cli-path-utils/-/ember-cli-path-utils-1.0.0.tgz#4e39af8b55301cddc5017739b77a804fba2071ed"
 
-ember-cli-postcss@^3.3.0:
+ember-cli-postcss@^3.5.2:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/ember-cli-postcss/-/ember-cli-postcss-3.5.2.tgz#e79915e1ef6fe289a7f790d018bb50948ed94753"
   dependencies:
