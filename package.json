@@ -49,7 +49,7 @@
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^4.5.0",
     "ember-source": "^2.13.0",
-    "loader.js": "^4.2.3",
+    "loader.js": "^4.6.0",
     "normalize.css": "^7.0.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0"
