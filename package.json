@@ -29,7 +29,7 @@
     "ember-cli": "2.13.2",
     "ember-cli-app-version": "^3.1.0",
     "ember-cli-blanket": "0.9.10",
-    "ember-cli-chai": "^0.4.3",
+    "ember-cli-chai": "^0.5.0",
     "ember-cli-dependency-checker": "^2.0.1",
     "ember-cli-eslint": "^4.2.0",
     "ember-cli-github-pages": "0.1.2",
