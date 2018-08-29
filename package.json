@@ -18,7 +18,7 @@
   "author": "Chris Ball <chris@echobind.com>",
   "license": "MIT",
   "dependencies": {
-    "ember-cli-babel": "^6.8.2",
+    "ember-cli-babel": "^7.1.0",
     "ember-cli-htmlbars": "^2.0.1",
     "yuidoc-ember-theme": "github:offirgolan/yuidoc-ember-theme"
   },
